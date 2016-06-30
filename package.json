@@ -1,0 +1,25 @@
+{
+  "name": "angular-starter",
+  "version": "1.0.0",
+  "description": "This project aims to streamline starting an application in AngularJS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp start",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulovitorwd/angular-starter.git"
+  },
+  "author": "Paulo Campos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulovitorwd/angular-starter/issues"
+  },
+  "homepage": "https://github.com/paulovitorwd/angular-starter",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "coffee-script": "^1.10.0",
+    "gulp": "^3.9.1"
+  }
+}

@@ -1,0 +1,14 @@
+# Ignored folders
+.sass-cache/
+node_modules/
+libs/
+styles/
+
+# Ignored files
+templates.js
+README.html
+
+# Ignored extensions
+*.DS_Store
+*.lnk
+*.log

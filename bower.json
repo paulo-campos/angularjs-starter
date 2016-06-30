@@ -1,0 +1,26 @@
+{
+  "name": "angular-starter",
+  "description": "This project aims to streamline starting an application in AngularJS",
+  "main": "gulpfile.js",
+  "authors": [
+    "Paulo Campos"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/paulovitorwd/angular-starter",
+  "moduleType": [
+    "es6",
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "dev/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7"
+  }
+}

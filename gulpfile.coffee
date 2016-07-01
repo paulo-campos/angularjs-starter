@@ -15,6 +15,24 @@ browserSync = require 'browser-sync'
 
 
 #### Config
+starter_project =
+    name        : 'angular-starter'
+    title       : 'AngularJS Starter'
+    description : 'This project aims to streamline starting an application in AngularJS'
+    keywords    : 'javascript, js, script, framework, angular, angularjs, starter'
+    version     : '1.0.0'
+    author      : 'Paulo Campos'
+    email       : 'paulovitorwd@gmail.com'
+    site        : 'http://paulofrontend.com.br/'
+new_project =
+    name        : '' # {string} Enter with the name of project
+    title       : '' # {string} Enter with the title of project
+    description : '' # {string} Enter with the description of project
+    keywords    : '' # {string} Enter with the version of project
+    version     : '' # {string} Enter with the version of project
+    author      : '' # {string} Enter author name
+    email       : '' # {string} Enter author email
+    site        : '' # {string} Enter author site url
 root_folder   = './'
 dev_folder    = 'dev/'
 dist_folder   = 'dist/'
@@ -50,6 +68,7 @@ gulp.task 'default', ->
     console.log '=============================='
     console.log '                              '
     console.log '    Use commands:             '
+    console.log '      \'$ gulp start\'        '
     console.log '      \'$ gulp compile\'      '
     console.log '      \'$ gulp watch\'        '
     console.log '      \'$ gulp build\'        '

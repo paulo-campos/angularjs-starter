@@ -7,4 +7,4 @@
             ATTEMPT      : 3,
             REQUEST_TIME : 3000
         });
-}());
+})();

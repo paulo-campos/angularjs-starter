@@ -8,7 +8,7 @@
     DeviceController.$inject = [
         '$scope',
         '$window',
-        'ScreenConstant'
+        'ScreensConstant'
     ];
 
     function DeviceController ($scope, $window, ScreensConstant) {
@@ -25,11 +25,12 @@
 
         function definingDevice () {
             if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                return $scope.deviceType = 2;
+                $scope.deviceType = 2;
+                return false;
             }
 
-            if (($window.innerWidth  > ScreenConstant.WIDTH.MAX.MOBILE) ||
-                ($window.innerHeight > ScreenConstant.WIDTH.MAX.MOBILE)) {
+            if (($window.innerWidth  > ScreensConstant.WIDTH.MAX.MOBILE) ||
+                ($window.innerHeight > ScreensConstant.WIDTH.MAX.MOBILE)) {
                 $scope.deviceType = 1;
             }
         }

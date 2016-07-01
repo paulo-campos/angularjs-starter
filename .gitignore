@@ -2,7 +2,7 @@
 .sass-cache/
 node_modules/
 libs/
-styles/
+stylesheets/
 
 # Ignored files
 templates.js

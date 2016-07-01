@@ -6,4 +6,4 @@
         .constant('StoragesConstant', {
             DATA: 'data'
         });
-}());
+})();

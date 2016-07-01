@@ -15,4 +15,4 @@
             'angulartics',
             'angulartics.google.analytics'
         ]);
-}());
+})();

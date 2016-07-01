@@ -28,4 +28,4 @@
             $element.bind('error', function () {});
         }
     }
-}());
+})();

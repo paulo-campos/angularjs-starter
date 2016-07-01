@@ -1,9 +1,9 @@
-http_path        = '/'
-sass_dir         = 'dev/scss'
+http_path        = 'dev/'
+sass_dir         = 'scss'
 css_dir          = 'dev/assets/stylesheets'
 images_dir       = 'dev/assets/images'
 fonts_dir        = 'dev/assets/fonts'
 relative_assets  = true
 line_comments    = true
 sourcemap        = true
-output_style     = :nested
+output_style     = :expanded

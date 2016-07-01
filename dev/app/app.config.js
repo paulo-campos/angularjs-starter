@@ -10,16 +10,14 @@
         '$sceDelegateProvider',
         '$httpProvider',
         '$urlRouterProvider',
-        '$locationProvider',
         '$stateProvider'
     ];
 
-    function AppConfig ($compileProvider, $sceDelegateProvider, $httpProvider, $urlRouterProvider, $locationProvider, $stateProvider) {
+    function AppConfig ($compileProvider, $sceDelegateProvider, $httpProvider, $urlRouterProvider, $stateProvider) {
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp|http):/);
         $sceDelegateProvider.resourceUrlWhitelist(['**']);
         $httpProvider.interceptors.push('InterceptorHelper');
         $urlRouterProvider.otherwise('/');
-        $locationProvider.html5Mode(true);
 
         $stateProvider
         .state('base', {
@@ -28,4 +26,4 @@
             controller:  'BaseController'
         });
     }
-}());
+})();

@@ -23,7 +23,6 @@ starter_project =
     keywords    : 'javascript, js, script, framework, angular, angularjs, starter'
     author      : 'Paulo Campos'
     email       : 'paulovitorwd@gmail.com'
-    site        : 'http://paulofrontend.com.br/'
 new_project =
     name        : '' # {string} Enter with the name of project
     version     : '' # {string} Enter with the version of project
@@ -32,7 +31,6 @@ new_project =
     keywords    : '' # {string} Enter with the version of project
     author      : '' # {string} Enter with the name of author
     email       : '' # {string} Enter with the email of author
-    site        : '' # {string} Enter with the url site of author
 root_folder   = './'
 package_file  = 'package.json'
 bower_file    = 'bower.json'

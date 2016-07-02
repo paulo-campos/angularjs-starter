@@ -11,7 +11,10 @@
     "type": "git",
     "url": "https://github.com/paulovitorwd/angular-starter.git"
   },
-  "author": "Paulo Campos",
+  "author": {
+      "name": "Paulo Campos",
+      "email": "paulovitorwd@gmail.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/paulovitorwd/angular-starter/issues"

@@ -1,5 +1,4 @@
-http_path        = 'dev/'
-sass_dir         = 'scss'
+sass_dir         = 'dev/scss'
 css_dir          = 'dev/assets/stylesheets'
 images_dir       = 'dev/assets/images'
 fonts_dir        = 'dev/assets/fonts'

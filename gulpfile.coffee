@@ -17,29 +17,28 @@ browserSync = require 'browser-sync'
 #### Config
 starter_project =
     name        : 'angular-starter'
-    title       : 'AngularJS Starter'
-    description : 'This project aims to streamline starting an application in AngularJS'
-    keywords    : 'javascript, js, script, framework, angular, angularjs, starter'
     version     : '1.0.0'
+    description : 'This project aims to streamline starting an application in AngularJS'
+    title       : 'AngularJS Starter'
+    keywords    : 'javascript, js, script, framework, angular, angularjs, starter'
     author      : 'Paulo Campos'
     email       : 'paulovitorwd@gmail.com'
     site        : 'http://paulofrontend.com.br/'
 new_project =
     name        : '' # {string} Enter with the name of project
-    title       : '' # {string} Enter with the title of project
-    description : '' # {string} Enter with the description of project
-    keywords    : '' # {string} Enter with the version of project
     version     : '' # {string} Enter with the version of project
-    author      : '' # {string} Enter author name
-    email       : '' # {string} Enter author email
-    site        : '' # {string} Enter author site url
+    description : '' # {string} Enter with the description of project
+    title       : '' # {string} Enter with the title of project
+    keywords    : '' # {string} Enter with the version of project
+    author      : '' # {string} Enter with the name of author
+    email       : '' # {string} Enter with the email of author
+    site        : '' # {string} Enter with the url site of author
 root_folder   = './'
 dev_folder    = 'dev/'
 dist_folder   = 'dist/'
 htaccess_file = '.htaccess'
 compass_file  = 'config.rb'
 index_file    = 'index.html'
-cache_file    = 'dev/templates.js/'
 js_files      = 'dev/app/**/*.js'
 scss_folder   = 'dev/scss/'
 scss_files    = 'dev/scss/**/*.scss'
@@ -52,15 +51,15 @@ assets_folder = 'dist/assets/'
 app_folder    = 'dist/app/'
 server =
     dev:
-        server: 'dev',
-        port:  3000
+        server: dev_folder,
+        port:   3000
     dist:
-        server: 'dist',
-        port:  4000
+        server: dist_folder,
+        port:   4000
 deploy =
-    work:    'http://localhost:3000/'
-    build:   'http://localhost:4000/'
-    prod:    'http://paulofrontend.com.br/'
+    work:  'http://localhost:' + server.dev.port + '/'
+    build: 'http://localhost:' + server.dist.port + '/'
+    prod:  'http://paulofrontend.com.br/' # {string} Enter with the url site of production
 
 
 #### Registers
@@ -68,7 +67,7 @@ gulp.task 'default', ->
     console.log '=============================='
     console.log '                              '
     console.log '    Use commands:             '
-    console.log '      \'$ gulp start\'        '
+    console.log '      \'$ gulp config\'       '
     console.log '      \'$ gulp compile\'      '
     console.log '      \'$ gulp watch\'        '
     console.log '      \'$ gulp build\'        '
@@ -76,6 +75,11 @@ gulp.task 'default', ->
     console.log '      \'$ gulp prod\'         '
     console.log '                              '
     console.log '=============================='
+
+
+gulp.task 'config', (done) ->
+    runSequence 'start', done
+
 
 gulp.task 'compile', (done) ->
     runSequence 'cache', 'jshint', 'scss', done
@@ -106,6 +110,43 @@ gulp.task 'watch', ['compile'], ->
 
 
 #### Units
+gulp.task 'start', ->
+    count   = 0
+    newData = Object.getOwnPropertyNames new_project
+
+    for data in newData
+        do (data) ->
+            count++ if new_project[data] is '' or typeof new_project[data] isnt 'string'
+    if count
+        console.log '=============================================================='
+        console.log '                                                              '
+        console.log 'Fill the all data of the new project before running this task!'
+        console.log '                                                              '
+        console.log '=============================================================='
+    else
+        gulp.src [package_file, bower_file]
+            .pipe replace starter_project.name,        new_project.name
+            .pipe replace starter_project.version,     new_project.version
+            .pipe replace starter_project.description, new_project.description
+            .pipe replace starter_project.author,      new_project.author
+            .pipe replace starter_project.email,       new_project.email
+            .pipe gulp.dest root_folder
+
+        gulp.src dev_folder + index_file
+            .pipe replace starter_project.name,        new_project.name
+            .pipe replace starter_project.version,     new_project.version
+            .pipe replace starter_project.description, new_project.description
+            .pipe replace starter_project.title,       new_project.title
+            .pipe replace starter_project.keywords,    new_project.keywords
+            .pipe replace starter_project.author,      new_project.author
+            .pipe replace starter_project.email,       new_project.email
+            .pipe gulp.dest app_folder
+
+        gulp.src js_files
+            .pipe replace starter_project.name, new_project.name
+            .pipe gulp.dest js_folder
+
+
 gulp.task 'cache', ->
     gulp.src html_files
         .pipe cache()

@@ -1,6 +1,5 @@
 {
-  "browser": true,
-  "node":    true,
-  "strict":  true,
+  "browser":   true,
+  "strict":    true,
   "esversion": 6
 }

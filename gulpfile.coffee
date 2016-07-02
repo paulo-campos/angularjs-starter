@@ -25,21 +25,24 @@ starter_project =
     email       : 'paulovitorwd@gmail.com'
     site        : 'http://paulofrontend.com.br/'
 new_project =
-    name        : '' # {string} Enter with the name of project
-    version     : '' # {string} Enter with the version of project
-    description : '' # {string} Enter with the description of project
-    title       : '' # {string} Enter with the title of project
-    keywords    : '' # {string} Enter with the version of project
-    author      : '' # {string} Enter with the name of author
-    email       : '' # {string} Enter with the email of author
-    site        : '' # {string} Enter with the url site of author
+    name        : 'a' # {string} Enter with the name of project
+    version     : 'a' # {string} Enter with the version of project
+    description : 'a' # {string} Enter with the description of project
+    title       : 'a' # {string} Enter with the title of project
+    keywords    : 'a' # {string} Enter with the version of project
+    author      : 'a' # {string} Enter with the name of author
+    email       : 'a' # {string} Enter with the email of author
+    site        : 'a' # {string} Enter with the url site of author
 root_folder   = './'
+package_file  = 'package.json'
+bower_file    = 'bower.json'
+compass_file  = 'config.rb'
 dev_folder    = 'dev/'
 dist_folder   = 'dist/'
-htaccess_file = '.htaccess'
-compass_file  = 'config.rb'
 index_file    = 'index.html'
+htaccess_file = 'dev/.htaccess'
 js_files      = 'dev/app/**/*.js'
+js_folder     = 'dev/app/'
 scss_folder   = 'dev/scss/'
 scss_files    = 'dev/scss/**/*.scss'
 assets_files  = 'dev/assets/**/*'
@@ -140,7 +143,7 @@ gulp.task 'start', ->
             .pipe replace starter_project.keywords,    new_project.keywords
             .pipe replace starter_project.author,      new_project.author
             .pipe replace starter_project.email,       new_project.email
-            .pipe gulp.dest app_folder
+            .pipe gulp.dest dev_folder
 
         gulp.src js_files
             .pipe replace starter_project.name, new_project.name

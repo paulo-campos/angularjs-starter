@@ -25,14 +25,14 @@ starter_project =
     email       : 'paulovitorwd@gmail.com'
     site        : 'http://paulofrontend.com.br/'
 new_project =
-    name        : 'a' # {string} Enter with the name of project
-    version     : 'a' # {string} Enter with the version of project
-    description : 'a' # {string} Enter with the description of project
-    title       : 'a' # {string} Enter with the title of project
-    keywords    : 'a' # {string} Enter with the version of project
-    author      : 'a' # {string} Enter with the name of author
-    email       : 'a' # {string} Enter with the email of author
-    site        : 'a' # {string} Enter with the url site of author
+    name        : '' # {string} Enter with the name of project
+    version     : '' # {string} Enter with the version of project
+    description : '' # {string} Enter with the description of project
+    title       : '' # {string} Enter with the title of project
+    keywords    : '' # {string} Enter with the version of project
+    author      : '' # {string} Enter with the name of author
+    email       : '' # {string} Enter with the email of author
+    site        : '' # {string} Enter with the url site of author
 root_folder   = './'
 package_file  = 'package.json'
 bower_file    = 'bower.json'

@@ -16,7 +16,7 @@ browserSync = require 'browser-sync'
 
 #### Config
 starter_project =
-    name        : 'angular-starter'
+    name        : 'angularjs-starter'
     version     : '1.0.0'
     description : 'This project aims to streamline starting an application in AngularJS'
     title       : 'AngularJS Starter'

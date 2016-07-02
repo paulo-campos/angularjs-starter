@@ -1,5 +1,5 @@
 {
-  "name": "angular-starter",
+  "name": "angularjs-starter",
   "description": "This project aims to streamline starting an application in AngularJS",
   "main": "gulpfile.js",
   "author": {

@@ -7,7 +7,6 @@ stylesheets/
 
 # Ignored files
 templates.js
-README.html
 
 # Ignored extensions
 *.DS_Store

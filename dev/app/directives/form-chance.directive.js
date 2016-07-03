@@ -6,7 +6,6 @@
         .directive('formChange', FormChange);
 
     function FormChange () {
-
         var directive = {
             restrict: 'A',
             scope: {

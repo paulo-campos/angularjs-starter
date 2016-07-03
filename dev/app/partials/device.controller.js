@@ -12,26 +12,23 @@
     ];
 
     function DeviceController ($scope, $window, ScreensConstant) {
+        const device = this;
+        ////////////////
 
-        /*
-         * 0 = Smartphone
-         * 1 = Tablet
-         * 2 = Desktop
-         */
-        $scope.deviceType = 0;
+        device.type = 0;
         ////////////////////
 
         definingDevice();
 
         function definingDevice () {
             if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                $scope.deviceType = 2;
+                device.type = 2;
                 return false;
             }
 
             if (($window.innerWidth  > ScreensConstant.WIDTH.MAX.MOBILE) ||
                 ($window.innerHeight > ScreensConstant.WIDTH.MAX.MOBILE)) {
-                $scope.deviceType = 1;
+                device.type = 1;
             }
         }
     }

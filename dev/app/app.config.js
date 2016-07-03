@@ -21,9 +21,10 @@
 
         $stateProvider
         .state('base', {
-            url:         '/',
-            templateUrl: 'app/partials/base/base.html',
-            controller:  'BaseController'
+            url          : '/',
+            templateUrl  : 'app/partials/base/base.html',
+            controller   : 'BaseController',
+            controllerAs : 'base'
         });
     }
 })();

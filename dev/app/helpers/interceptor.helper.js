@@ -10,7 +10,6 @@
     ];
 
     function InterceptorService ($rootScope) {
-
         var helper = {
             request: function (success) {
                 return requestSuccess(success);

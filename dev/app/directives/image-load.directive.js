@@ -6,7 +6,6 @@
         .directive('imageLoad', Imageload);
 
     function Imageload () {
-
         var directive = {
             restrict: 'A',
             scope: {

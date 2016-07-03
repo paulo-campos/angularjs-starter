@@ -98,14 +98,14 @@ gulp.task 'watch', ['compile'], ->
     ]).on 'change', browserSync.reload
 
 
-# gulp.task 'build', ['compile'], (done) ->
-#     runSequence 'clean', 'copy', 'partials-min', 'index-min', 'redirect-build', 'deploy-build', done
-#
-#
-# gulp.task 'check', ['build'], ->
-#     browserSync.init server.dist
-#
-#
+gulp.task 'build', ['compile'], (done) ->
+    runSequence 'clean', 'copy', 'partials-min', 'index-min', 'deploy-build', done
+
+
+gulp.task 'check', ['build'], ->
+    browserSync.init server.dist
+
+
 # gulp.task 'prod', ['build'], ->
 #     runSequence 'redirect-prod', 'deploy-prod'
 
@@ -175,52 +175,52 @@ gulp.task 'scss', ->
         .pipe browserSync.stream()
 
 
-# gulp.task 'clean', ->
-#     gulp.src dist_folder, read: false
-#         .pipe clean()
-#
-#
-# gulp.task 'copy', ->
-#     gulp.src dev_folder + htaccess_file
-#         .pipe gulp.dest dist_folder
-#
-#     gulp.src [
-#             assets_files,
-#             '!' + css_files
-#         ]
-#         .pipe gulp.dest assets_folder
-#
-#
-# gulp.task 'partials-min', ->
-#     gulp.src html_files
-#         .pipe useref()
-#         .pipe gulpif '*.html', htmlmin(
-#             removeComments: true
-#             collapseWhitespace: true
-#         )
-#         .pipe gulp.dest app_folder
-#
-#
-# gulp.task 'index-min', ->
-#     gulp.src dev_folder + index_file
-#         .pipe useref()
-#         .pipe gulpif '*.css', cssnano()
-#         .pipe gulpif '*.js', uglify()
-#         .pipe gulpif '*.html', htmlmin(
-#             removeComments: true
-#             collapseWhitespace: true
-#         )
-#         .pipe gulp.dest dist_folder
-#
-#
-# gulp.task 'deploy-build', ->
-#     gulp.src dist_folder + index_file
-#         .pipe replace deploy.work, deploy.build
-#         .pipe replace deploy.homolog, deploy.build
-#         .pipe replace deploy.prod, deploy.build
-#         .pipe gulp.dest dist_folder
-#
-#
+gulp.task 'clean', ->
+    gulp.src dist_folder, read: false
+        .pipe clean()
+
+
+gulp.task 'copy', ->
+    gulp.src htaccess_file
+        .pipe gulp.dest dist_folder
+
+    gulp.src [
+            assets_files,
+            '!' + css_files
+        ]
+        .pipe gulp.dest assets_folder
+
+
+gulp.task 'partials-min', ->
+    gulp.src html_files
+        .pipe useref()
+        .pipe gulpif '*.html', htmlmin(
+            removeComments: true
+            collapseWhitespace: true
+        )
+        .pipe gulp.dest app_folder
+
+
+gulp.task 'index-min', ->
+    gulp.src dev_folder + index_file
+        .pipe useref()
+        .pipe gulpif '*.css', cssnano()
+        .pipe gulpif '*.js', uglify()
+        .pipe gulpif '*.html', htmlmin(
+            removeComments: true
+            collapseWhitespace: true
+        )
+        .pipe gulp.dest dist_folder
+
+
+gulp.task 'deploy-build', ->
+    gulp.src dist_folder + index_file
+        .pipe replace deploy.work, deploy.build
+        .pipe replace deploy.homolog, deploy.build
+        .pipe replace deploy.prod, deploy.build
+        .pipe gulp.dest dist_folder
+
+
 # gulp.task 'deploy-prod', ->
 #     gulp.src dist_folder + index_file
 #         .pipe replace deploy.build, deploy.prod

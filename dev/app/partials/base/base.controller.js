@@ -10,8 +10,10 @@
     ];
 
     function BaseController ($scope) {
+        const base = this;
+        ////////////////
 
-        $scope.title = 'AngularJS Starter';
+        base.title = 'AngularJS Starter';
         ////////////////
 
         $scope.$on('request.success',  function () {});

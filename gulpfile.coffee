@@ -106,8 +106,8 @@ gulp.task 'check', ['build'], ->
     browserSync.init server.dist
 
 
-# gulp.task 'prod', ['build'], ->
-#     runSequence 'redirect-prod', 'deploy-prod'
+gulp.task 'prod', ['build'], (done) ->
+    runSequence 'deploy-prod', done
 
 
 #### Units
@@ -216,12 +216,10 @@ gulp.task 'index-min', ->
 gulp.task 'deploy-build', ->
     gulp.src dist_folder + index_file
         .pipe replace deploy.work, deploy.build
-        .pipe replace deploy.homolog, deploy.build
-        .pipe replace deploy.prod, deploy.build
         .pipe gulp.dest dist_folder
 
 
-# gulp.task 'deploy-prod', ->
-#     gulp.src dist_folder + index_file
-#         .pipe replace deploy.build, deploy.prod
-#         .pipe gulp.dest dist_folder
+gulp.task 'deploy-prod', ->
+    gulp.src dist_folder + index_file
+        .pipe replace deploy.build, deploy.prod
+        .pipe gulp.dest dist_folder

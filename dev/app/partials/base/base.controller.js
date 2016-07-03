@@ -10,7 +10,7 @@
     ];
 
     function BaseController ($scope) {
-        const base = this;
+        var base = this;
         ////////////////
 
         base.title = 'AngularJS Starter';
@@ -22,4 +22,4 @@
         $scope.$on('response.error',   function () {});
 
     }
-}());
+})();

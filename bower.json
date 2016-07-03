@@ -9,7 +9,6 @@
   "license": "ISC",
   "homepage": "https://github.com/paulovitorwd/angular-starter",
   "moduleType": [
-    "es6",
     "globals"
   ],
   "ignore": [

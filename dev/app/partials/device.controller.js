@@ -12,7 +12,7 @@
     ];
 
     function DeviceController ($scope, $window, ScreensConstant) {
-        const device = this;
+        var device = this;
         ////////////////
 
         device.type = 0;
@@ -32,4 +32,4 @@
             }
         }
     }
-}());
+})();

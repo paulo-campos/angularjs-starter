@@ -8,16 +8,16 @@
     /**
      * @namespace ImageLoad
      * @desc      Calls the method when a child element changes
-     * @example   <img src="url-of-image" image-load="doSomething()"></form>
+     * @example   <img src="url-of-image" image-load="doSomething"></form>
      * @memberOf  App.Directives
      */
     function ImageLoad () {
         var directive = {
             restrict: 'A',
             scope: {
-                imageOnLoad: '=imageload'
+                onLoad: '=imageLoad'
             },
-            link: link
+            link: Link
         };
 
         return directive;
@@ -29,10 +29,10 @@
          * @param     {Object} $element Data of the element
          * @memberOf  App.Directives.ImageLoad
          */
-        function link ($scope, $element) {
+        function Link ($scope, $element) {
             $element.bind('load', function () {
                 $scope.$apply(function () {
-                    $scope.imageOnLoad($element);
+                    $scope.onLoad($element);
                 });
             });
 

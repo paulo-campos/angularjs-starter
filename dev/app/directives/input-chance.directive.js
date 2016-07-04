@@ -8,7 +8,7 @@
     /**
      * @namespace InputChange
      * @desc      Calls the method when a child element changes
-     * @example   <input type="some-type" name="some-name" ng-model="some.model" input-change="doSomething()">
+     * @example   <input type="some-type" name="some-name" ng-model="some.model" input-change="doSomething">
      * @memberOf  App.Directives
      */
     function InputChange () {

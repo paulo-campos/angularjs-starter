@@ -25,6 +25,5 @@
         $scope.$on('response.success', function () {});
         $scope.$on('request.error',    function () {});
         $scope.$on('response.error',   function () {});
-
     }
 })();

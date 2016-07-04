@@ -3,7 +3,7 @@
 > This project aims to streamline starting an application in AngularJS
 
 ### Dependencies
-There are dependencies required for this project in angularJS, then to install them or update them, with [NodeJS and your NPM](https://nodejs.org/en/) installed, run the commands:
+There are dependencies required for this project in AngularJS, then to install them or update them, with [NodeJS and your NPM](https://nodejs.org/en/) installed, run the commands:
 
     npm install -g gulp bower coffee-script
     gem install sass compass

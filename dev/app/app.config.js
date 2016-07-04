@@ -11,6 +11,11 @@
         '$stateProvider'
     ];
 
+    /**
+     * @namespace Config
+     * @desc Main settings of the application
+     * @memberOf App
+     */
     function AppConfig ($httpProvider, $urlRouterProvider, $stateProvider) {
         $httpProvider.interceptors.push('InterceptorService');
         $urlRouterProvider.otherwise('/');

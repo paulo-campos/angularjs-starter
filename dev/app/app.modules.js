@@ -1,3 +1,7 @@
+/**
+ * @namespace App
+ * @desc Root of the application
+ */
 (function () {
     'use strict';
 
@@ -12,3 +16,20 @@
             'offClick'
         ]);
 })();
+/**
+ * @namespace Controllers
+ * @desc Monitor the application
+ * @memberOf App
+ */
+
+/**
+ * @namespace Directives
+ * @desc Produce components for the application
+ * @memberOf App
+ */
+
+/**
+ * @namespace Services
+ * @desc They help in the application of data control
+ * @memberOf App
+ */

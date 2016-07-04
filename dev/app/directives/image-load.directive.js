@@ -3,9 +3,15 @@
 
     angular
         .module('angularjs-starter')
-        .directive('imageLoad', Imageload);
+        .directive('imageLoad', ImageLoad);
 
-    function Imageload () {
+    /**
+     * @namespace ImageLoad
+     * @desc      Calls the method when a child element changes
+     * @example   <img src="url-of-image" image-load="doSomething()"></form>
+     * @memberOf  App.Directives
+     */
+    function ImageLoad () {
         var directive = {
             restrict: 'A',
             scope: {
@@ -17,6 +23,12 @@
         return directive;
         ////////////////////
 
+        /**
+         * @desc      Binds image the load image
+         * @param     {Object} $scope Data of the scope
+         * @param     {Object} $element Data of the element
+         * @memberOf  App.Directives.ImageLoad
+         */
         function link ($scope, $element) {
             $element.bind('load', function () {
                 $scope.$apply(function () {

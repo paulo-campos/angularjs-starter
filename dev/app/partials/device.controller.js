@@ -11,6 +11,11 @@
         'ScreensConstant'
     ];
 
+    /**
+     * @namespace Device
+     * @desc      Controls the scope of the device
+     * @memberOf  App.Controllers
+     */
     function DeviceController ($scope, $window, ScreensConstant) {
         var device = this;
         ////////////////
@@ -20,6 +25,10 @@
 
         definingDevice();
 
+        /**
+         * @desc      Defines type of the device
+         * @memberOf  App.Controllers.Device
+         */
         function definingDevice () {
             if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 device.type.desktop = true;

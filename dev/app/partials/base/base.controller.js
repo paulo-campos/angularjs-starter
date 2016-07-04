@@ -9,6 +9,11 @@
         '$scope'
     ];
 
+    /**
+     * @namespace Base
+     * @desc      Controls the scope of the base
+     * @memberOf  App.Controllers
+     */
     function BaseController ($scope) {
         var base = this;
         ////////////////

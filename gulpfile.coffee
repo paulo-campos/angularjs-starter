@@ -3,6 +3,7 @@ gulp        = require 'gulp'
 runSequence = require 'run-sequence'
 cache       = require 'gulp-angular-templatecache'
 jshint      = require 'gulp-jshint'
+jsdoc       = require 'gulp-jsdoc'
 compass     = require 'gulp-compass'
 clean       = require 'gulp-clean'
 useref      = require 'gulp-useref'
@@ -37,6 +38,8 @@ root_folder   = './'
 package_file  = 'package.json'
 bower_file    = 'bower.json'
 compass_file  = 'config.rb'
+docs_folder   = 'documentation'
+docs_files    = 'documentation/**/*'
 dev_folder    = 'dev/'
 dist_folder   = 'dist/'
 index_file    = 'index.html'
@@ -85,14 +88,14 @@ gulp.task 'config', (done) ->
 
 
 gulp.task 'compile', (done) ->
-    runSequence 'cache', 'jshint', 'scss', done
+    runSequence 'cache', 'jshint', 'doc', 'scss', done
 
 
 gulp.task 'watch', ['compile'], ->
     browserSync.init server.dev
 
     gulp.watch html_files, ['cache']
-    gulp.watch js_files,   ['jshint']
+    gulp.watch js_files,   ['jshint', 'doc']
     gulp.watch scss_files, ['scss']
     gulp.watch([
         dev_folder + index_file,
@@ -160,6 +163,17 @@ gulp.task 'jshint', ->
     gulp.src js_files
         .pipe jshint()
         .pipe jshint.reporter('default')
+
+
+gulp.task 'doc-clean', ->
+    gulp.src docs_folder
+        .pipe clean()
+
+
+gulp.task 'doc', ['doc-clean'], ->
+    gulp.src js_files
+    	.pipe jsdoc docs_folder
+
 
 gulp.task 'css-clean', ->
     gulp.src css_files

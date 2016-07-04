@@ -28,8 +28,9 @@ And be happy!
 
 ###### Added for development
 - Management of packages for development with [NPM](https://www.npmjs.com/)
-- Configuration builds with [Gulp](http://gulpjs.com/) using [Coffeescript](http://coffeescript.org/)
+- Configuration builds with [Gulp](http://gulpjs.com/) using [Coffee Script](http://coffeescript.org/)
 - CSS compilation with [Sass](http://sass-lang.com/) using [Compass](http://compass-style.org/)
 - Checking javascript with [JSHint](http://jshint.com/)
 - Generate javascript documentation with [JSDoc](http://usejsdoc.org/)
+- Good practice with [Angular style guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
 - Management of libs for the project with [Bower](https://bower.io/)

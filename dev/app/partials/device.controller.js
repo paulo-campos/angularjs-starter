@@ -15,21 +15,24 @@
         var device = this;
         ////////////////
 
-        device.type = 0;
+        device.type = {};
         ////////////////////
 
         definingDevice();
 
         function definingDevice () {
             if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                device.type = 2;
-                return false;
+                device.type.desktop = true;
+                return device.type.desktop;
             }
 
             if (($window.innerWidth  > ScreensConstant.WIDTH.MAX.MOBILE) ||
                 ($window.innerHeight > ScreensConstant.WIDTH.MAX.MOBILE)) {
-                device.type = 1;
+                device.type.tablet = true;
+                return device.type.desktop;
             }
+
+            device.type.smartphone = true;
         }
     }
 })();

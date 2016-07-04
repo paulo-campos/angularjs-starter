@@ -24,9 +24,6 @@
     "angular-ui-router": "^0.3.1",
     "angular-animate": "^1.5.7",
     "angular-touch": "^1.5.7",
-    "angular-off-click": "^1.0.5",
-    "a0-angular-storage": "^0.0.15",
-    "angulartics-google-analytics": "^0.2.0",
-    "angular-socialshare": "angularjs-socialshare#^2.2.3"
-  },
+    "angular-off-click": "^1.0.5"
+  }
 }

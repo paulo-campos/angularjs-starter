@@ -9,10 +9,6 @@
             'ui.router',
             'ngAnimate',
             'ngTouch',
-            'angular-storage',
-            'offClick',
-            '720kb.socialshare',
-            'angulartics',
-            'angulartics.google.analytics'
+            'offClick'
         ]);
 })();

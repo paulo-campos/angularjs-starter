@@ -3,7 +3,7 @@
 
     angular
         .module('angularjs-starter')
-        .service('InterceptorHelper', InterceptorService);
+        .service('InterceptorService', InterceptorService);
 
     InterceptorService.$inject = [
         '$rootScope'

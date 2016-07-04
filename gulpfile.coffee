@@ -16,6 +16,7 @@ browserSync = require 'browser-sync'
 
 #### Config
 starter_project =
+    repository  : 'https://github.com/paulovitorwd/ionic-starter'
     name        : 'angularjs-starter'
     version     : '1.0.0'
     description : 'This project aims to streamline starting an application in AngularJS'
@@ -24,6 +25,7 @@ starter_project =
     author      : 'Paulo Campos'
     email       : 'paulovitorwd@gmail.com'
 new_project =
+    repository  : '' # {string} Enter with the repository of project
     name        : '' # {string} Enter with the name of project
     version     : '' # {string} Enter with the version of project
     description : '' # {string} Enter with the description of project
@@ -159,11 +161,11 @@ gulp.task 'jshint', ->
         .pipe jshint()
         .pipe jshint.reporter('default')
 
-
-gulp.task 'scss', ->
-    gulp.src css_folder
+gulp.task 'css-clean', ->
+    gulp.src css_files
         .pipe clean()
 
+gulp.task 'scss', ['css-clean'], ->
     gulp.src scss_files
         .pipe compass
             config_file: compass_file

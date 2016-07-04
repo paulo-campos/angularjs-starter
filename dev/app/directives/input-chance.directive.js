@@ -3,19 +3,19 @@
 
     angular
         .module('angularjs-starter')
-        .directive('formChange', FormChange);
+        .directive('inputChange', InputChange);
 
     /**
-     * @namespace FormChange
+     * @namespace InputChange
      * @desc      Calls the method when a child element changes
-     * @example   <form form-change="doSomething()"></form>
+     * @example   <input type="some-type" name="some-name" ng-model="some.model" input-change="doSomething()">
      * @memberOf  App.Directives
      */
-    function FormChange () {
+    function InputChange () {
         var directive = {
             restrict: 'A',
             scope: {
-                onChange: '=change'
+                onChange: '=inputChange'
             },
             link: Link
         };
@@ -27,7 +27,7 @@
          * @desc      Binds to change any element child
          * @param     {Object} $scope Data of the scope
          * @param     {Object} $element Data of the element
-         * @memberOf  App.Directives.FormChange
+         * @memberOf  App.Directives.InputChange
          */
         function Link ($scope, $element) {
             $element.on('input textarea select', function() {

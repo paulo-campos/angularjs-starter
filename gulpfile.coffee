@@ -63,24 +63,24 @@ server =
         server: dist_folder,
         port:   4000
 deploy =
-    work:  'http://localhost:' + server.dev.port + '/'
-    build: 'http://localhost:' + server.dist.port + '/'
-    prod:  'http://paulofrontend.com.br/' # {string} Enter with the url site of production
+    dev:  'http://localhost:' + server.dev.port + '/'
+    dist: 'http://localhost:' + server.dist.port + '/'
+    prod: 'http://paulofrontend.com.br/' # {string} Enter with the url site of production
 
 
 #### Registers
 gulp.task 'default', ->
-    console.log '=============================='
-    console.log '                              '
-    console.log '    Use commands:             '
-    console.log '      \'$ gulp config\'       '
-    console.log '      \'$ gulp compile\'      '
-    console.log '      \'$ gulp watch\'        '
-    console.log '      \'$ gulp build\'        '
-    console.log '      \'$ gulp check\'        '
-    console.log '      \'$ gulp prod\'         '
-    console.log '                              '
-    console.log '=============================='
+    console.log '==============================='
+    console.log '                               '
+    console.log '    Use commands:              '
+    console.log '      \'$ gulp config\'        '
+    console.log '      \'$ gulp compile\'       '
+    console.log '      \'$ gulp watch\'         '
+    console.log '      \'$ gulp compress\'      '
+    console.log '      \'$ gulp review\'        '
+    console.log '      \'$ gulp prod\'          '
+    console.log '                               '
+    console.log '==============================='
 
 
 gulp.task 'config', (done) ->
@@ -103,16 +103,16 @@ gulp.task 'watch', ['compile'], ->
     ]).on 'change', browserSync.reload
 
 
-gulp.task 'build', ['compile'], (done) ->
-    runSequence 'clean', 'copy', 'partials-min', 'index-min', 'deploy-build', done
+gulp.task 'compress', ['compile'], (done) ->
+    runSequence 'copy', 'partials-min', 'index-min', 'dist-deploy', done
 
 
-gulp.task 'check', ['build'], ->
+gulp.task 'review', ['compress'], ->
     browserSync.init server.dist
 
 
-gulp.task 'prod', ['build'], (done) ->
-    runSequence 'deploy-prod', done
+gulp.task 'prod', ['compress'], (done) ->
+    runSequence 'prod-deploy', done
 
 
 #### Units
@@ -123,12 +123,14 @@ gulp.task 'start', ->
     for data in newData
         do (data) ->
             count++ if new_project[data] is '' or typeof new_project[data] isnt 'string'
+
     if count
-        console.log '=============================================================='
-        console.log '                                                              '
-        console.log 'Fill the all data of the new project before running this task!'
-        console.log '                                                              '
-        console.log '=============================================================='
+        console.log '========================================='
+        console.log '                                         '
+        console.log '    Please, fill all data of the new     '
+        console.log '    project before running this task!    '
+        console.log '                                         '
+        console.log '========================================='
     else
         gulp.src [package_file, bower_file]
             .pipe replace starter_project.name,        new_project.name
@@ -191,12 +193,12 @@ gulp.task 'scss', ['css-clean'], ->
         .pipe browserSync.stream()
 
 
-gulp.task 'clean', ->
-    gulp.src dist_folder, read: false
+gulp.task 'dist-clean', ->
+    gulp.src dist_folder
         .pipe clean()
 
 
-gulp.task 'copy', ->
+gulp.task 'copy', ['dist-clean'], ->
     gulp.src htaccess_file
         .pipe gulp.dest dist_folder
 
@@ -229,13 +231,13 @@ gulp.task 'index-min', ->
         .pipe gulp.dest dist_folder
 
 
-gulp.task 'deploy-build', ->
+gulp.task 'dist-deploy', ->
     gulp.src dist_folder + index_file
-        .pipe replace deploy.work, deploy.build
+        .pipe replace deploy.dev, deploy.dist
         .pipe gulp.dest dist_folder
 
 
-gulp.task 'deploy-prod', ->
+gulp.task 'prod-deploy', ->
     gulp.src dist_folder + index_file
-        .pipe replace deploy.build, deploy.prod
+        .pipe replace deploy.dist, deploy.prod
         .pipe gulp.dest dist_folder

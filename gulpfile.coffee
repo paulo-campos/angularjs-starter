@@ -13,6 +13,8 @@ cssnano     = require 'gulp-cssnano'
 uglify      = require 'gulp-uglify'
 replace     = require 'gulp-replace'
 browserSync = require 'browser-sync'
+syncDev     = browserSync.create()
+syncDoc     = browserSync.create()
 
 
 #### Config
@@ -59,6 +61,9 @@ server =
     dev:
         server: dev_folder,
         port:   3000
+    doc:
+        server: docs_folder,
+        port:   4000
     dist:
         server: dist_folder,
         port:   4000
@@ -70,17 +75,18 @@ deploy =
 
 #### Registers
 gulp.task 'default', ->
-    console.log '==============================='
-    console.log '                               '
-    console.log '    Use commands:              '
-    console.log '      \'$ gulp config\'        '
-    console.log '      \'$ gulp compile\'       '
-    console.log '      \'$ gulp watch\'         '
-    console.log '      \'$ gulp compress\'      '
-    console.log '      \'$ gulp review\'        '
-    console.log '      \'$ gulp prod\'          '
-    console.log '                               '
-    console.log '==============================='
+    console.log '============================='
+    console.log '|                           |'
+    console.log '|    Use commands:          |'
+    console.log '|      $ gulp config        |'
+    console.log '|      $ gulp compile       |'
+    console.log '|      $ gulp watch         |'
+    console.log '|      $ gulp docs          |'
+    console.log '|      $ gulp compress      |'
+    console.log '|      $ gulp review        |'
+    console.log '|      $ gulp prod          |'
+    console.log '|                           |'
+    console.log '============================='
 
 
 gulp.task 'config', (done) ->
@@ -88,27 +94,30 @@ gulp.task 'config', (done) ->
 
 
 gulp.task 'compile', (done) ->
-    runSequence 'cache', 'jshint', 'doc', 'scss', done
+    runSequence 'cache', 'jshint', 'doc-clean', 'doc', 'css-clean', 'scss', done
 
 
-gulp.task 'watch', ['compile'], ->
-    browserSync.init server.dev
+gulp.task 'watch', ['compile'], (done) ->
+    syncDev.init server.dev, done
 
     gulp.watch html_files, ['cache']
     gulp.watch js_files,   ['jshint', 'doc']
     gulp.watch scss_files, ['scss']
-    gulp.watch([
-        dev_folder + index_file,
-        app_files
-    ]).on 'change', browserSync.reload
+    gulp.watch([dev_folder + index_file, app_files ]).on 'change', browserSync.reload
+
+
+gulp.task 'docs', ['watch'], (done) ->
+    syncDoc.init server.doc, done
+
+    gulp.watch(docs_files).on 'change', syncDoc.reload
 
 
 gulp.task 'compress', ['compile'], (done) ->
     runSequence 'copy', 'partials-min', 'index-min', 'dist-deploy', done
 
 
-gulp.task 'review', ['compress'], ->
-    browserSync.init server.dist
+gulp.task 'review', ['compress'], (done) ->
+    browserSync.init server.dist, done
 
 
 gulp.task 'prod', ['compress'], (done) ->
@@ -125,12 +134,12 @@ gulp.task 'start', ->
             count++ if new_project[data] is '' or typeof new_project[data] isnt 'string'
 
     if count
-        console.log '========================================='
-        console.log '                                         '
-        console.log '    Please, fill all data of the new     '
-        console.log '    project before running this task!    '
-        console.log '                                         '
-        console.log '========================================='
+        console.log '==========================================='
+        console.log '|                                         |'
+        console.log '|    Please, fill all data of the new     |'
+        console.log '|    project before running this task!    |'
+        console.log '|                                         |'
+        console.log '==========================================='
     else
         gulp.src [package_file, bower_file]
             .pipe replace starter_project.name,        new_project.name
@@ -168,20 +177,20 @@ gulp.task 'jshint', ->
 
 
 gulp.task 'doc-clean', ->
-    gulp.src docs_folder
+    gulp.src docs_files, read: false
         .pipe clean()
 
 
-gulp.task 'doc', ['doc-clean'], ->
+gulp.task 'doc', ->
     gulp.src js_files
     	.pipe jsdoc docs_folder
 
 
 gulp.task 'css-clean', ->
-    gulp.src css_files
+    gulp.src css_files, read: false
         .pipe clean()
 
-gulp.task 'scss', ['css-clean'], ->
+gulp.task 'scss', ->
     gulp.src scss_files
         .pipe compass
             config_file: compass_file
@@ -190,15 +199,15 @@ gulp.task 'scss', ['css-clean'], ->
         .on 'error', ->
             process.exit 1
         .pipe gulp.dest css_folder
-        .pipe browserSync.stream()
+        .pipe syncDev.stream()
 
 
 gulp.task 'dist-clean', ->
-    gulp.src dist_folder
+    gulp.src dist_folder, read: false
         .pipe clean()
 
 
-gulp.task 'copy', ['dist-clean'], ->
+gulp.task 'copy', ->
     gulp.src htaccess_file
         .pipe gulp.dest dist_folder
 

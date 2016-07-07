@@ -1,5 +1,4 @@
 gulp    = require 'gulp'
-replace = require 'gulp-replace'
 useref  = require 'gulp-useref'
 gulpif  = require 'gulp-if'
 htmlmin = require 'gulp-htmlmin'
@@ -20,8 +19,7 @@ gulp.task 'htmlmin-partials', ->
 
 
 gulp.task 'htmlmin-index', ->
-    gulp.src path.index_file
-        .pipe replace '<!-- inject:cordova -->', '<script src="cordova.js"></script>'
+    gulp.src path.dev_folder + path.index_file
         .pipe useref()
         .pipe gulpif '*.css', cssnano()
         .pipe gulpif '*.js', uglify()

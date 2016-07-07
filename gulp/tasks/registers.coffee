@@ -1,5 +1,4 @@
 gulp      = require 'gulp'
-shell     = require 'gulp-shell'
 sequence  = require 'run-sequence'
 directory = require 'require-dir'
 
@@ -11,9 +10,10 @@ directory './'
 #====================
 
 registers =
-    compileConfig : (done) -> sequence 'start',                                                      done
-    compileDev    : (done) -> sequence 'cache', 'jshint', 'clean-docs', 'docs', 'clean-css', 'scss', done
-    compileDist   : (done) -> sequence 'clean-dist', 'copy', 'htmlmin-partials', 'htmlmin-index',    done
+    compileConfig : (done) -> sequence 'start',                                                                  done
+    compileDev    : (done) -> sequence 'cache', 'jshint', 'clean-docs', 'docs', 'clean-css', 'scss',             done
+    compileDist   : (done) -> sequence 'clean-dist', 'copy', 'htmlmin-partials', 'htmlmin-index', 'deploy-dist', done
+    compileProd   : (done) -> sequence 'deploy-prod',                                                            done
 
     watchDev  : (done) ->
         sync.dev.init path.server.dev, done

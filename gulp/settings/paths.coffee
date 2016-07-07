@@ -25,14 +25,14 @@ paths =
             server : 'dev/',
             port   : 3000
         doc:
-            server : 'documentation',
+            server : 'documentation/',
             port   : 4000
         dist:
             server : 'www/',
             port   : 5000
     deploy :
         dev:  'http://localhost:3000/'
-        dist: 'http://localhost:4000/'
+        dist: 'http://localhost:5000/'
         prod: 'http://paulofrontend.com.br/' # {string} Enter with the url site of production
 
 exports.paths = paths

@@ -1,16 +1,16 @@
-ulp  = require 'gulp'
-jsdoc = require 'gulp-jsdoc'
+gulp    = require 'gulp'
+replace = require 'gulp-replace'
 
 path = require('./../settings/paths.coffee').paths
 #====================
 
-gulp.task 'dist-deploy', ->
-    gulp.src dist_folder + index_file
-        .pipe replace deploy.dev, deploy.dist
-        .pipe gulp.dest dist_folder
+gulp.task 'deploy-dist', ->
+    gulp.src path.dist_folder + path.index_file
+        .pipe replace path.deploy.dev, path.deploy.dist
+        .pipe gulp.dest path.dist_folder
 
 
-gulp.task 'prod-deploy', ->
-    gulp.src dist_folder + index_file
-        .pipe replace deploy.dist, deploy.prod
-        .pipe gulp.dest dist_folder
+gulp.task 'deploy-prod', ->
+    gulp.src path.dist_folder + path.index_file
+        .pipe replace path.deploy.dist, path.deploy.prod
+        .pipe gulp.dest path.dist_folder

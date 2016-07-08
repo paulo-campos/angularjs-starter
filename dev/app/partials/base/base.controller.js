@@ -5,9 +5,7 @@
         .module('angularjs-starter')
         .controller('BaseController', BaseController);
 
-    BaseController.$inject = [
-        '$scope'
-    ];
+    BaseController.$inject = [ '$scope' ];
 
     /**
      * @namespace Base

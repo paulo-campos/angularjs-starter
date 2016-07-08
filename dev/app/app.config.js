@@ -17,7 +17,7 @@
      * @memberOf App
      */
     function AppConfig ($httpProvider, $urlRouterProvider, $stateProvider) {
-        $httpProvider.interceptors.push('InterceptorService');
+        $httpProvider.interceptors.push('InterceptorFactory');
         $urlRouterProvider.otherwise('/');
 
         $stateProvider

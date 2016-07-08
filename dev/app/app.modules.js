@@ -29,7 +29,7 @@
  */
 
 /**
- * @namespace Services
+ * @namespace Factories
  * @desc They help in the application of data control
  * @memberOf App
  */

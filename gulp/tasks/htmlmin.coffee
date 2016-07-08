@@ -5,21 +5,21 @@ htmlmin = require 'gulp-htmlmin'
 cssnano = require 'gulp-cssnano'
 uglify  = require 'gulp-uglify'
 
-path = require('./../settings/paths.coffee').paths
+paths = require('./../settings/paths.coffee').paths
 #====================
 
 gulp.task 'htmlmin-partials', ->
-    gulp.src path.html_files
+    gulp.src paths.html_files
         .pipe useref()
         .pipe gulpif '*.html', htmlmin(
             removeComments: true
             collapseWhitespace: true
         )
-        .pipe gulp.dest path.app_folder
+        .pipe gulp.dest paths.app_folder
 
 
 gulp.task 'htmlmin-index', ->
-    gulp.src path.dev_folder + path.index_file
+    gulp.src paths.dev_folder + paths.index_file
         .pipe useref()
         .pipe gulpif '*.css', cssnano()
         .pipe gulpif '*.js', uglify()
@@ -27,4 +27,4 @@ gulp.task 'htmlmin-index', ->
             removeComments: true
             collapseWhitespace: true
         )
-        .pipe gulp.dest path.dist_folder
+        .pipe gulp.dest paths.dist_folder

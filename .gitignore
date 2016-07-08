@@ -1,9 +1,9 @@
 # Ignored folders
 .sass-cache/
 dist/
-documentation/
 node_modules/
 libs/
+out/
 stylesheets/
 
 # Ignored files

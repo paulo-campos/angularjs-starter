@@ -1,17 +1,17 @@
 gulp    = require 'gulp'
 replace = require 'gulp-replace'
 
-start = require('./../settings/start.coffee').start
-path  = require('./../settings/paths.coffee').paths
-sync  = require('./../settings/sync.coffee').sync
+project = require('./../settings/project.coffee').project
+paths   = require('./../settings/paths.coffee').paths
+sync    = require('./../settings/sync.coffee').sync
 #====================
 
 gulp.task 'start', ->
     count   = 0
-    newData = Object.getOwnPropertyNames path.new_project
+    newData = Object.getOwnPropertyNames project.new
 
     for data in newData
-        do (data) -> count++ if path.new_project[data] is '' or typeof path.new_project[data] isnt 'string'
+        do (data) -> count++ if project.new[data] is '' or typeof project.new[data] isnt 'string'
 
     if count
         console.log '==========================================='
@@ -21,24 +21,24 @@ gulp.task 'start', ->
         console.log '|                                         |'
         console.log '==========================================='
     else
-        gulp.src [ package_file, bower_file ]
-            .pipe replace starter_project.name,        new_project.name
-            .pipe replace starter_project.version,     new_project.version
-            .pipe replace starter_project.description, new_project.description
-            .pipe replace starter_project.author,      new_project.author
-            .pipe replace starter_project.email,       new_project.email
-            .pipe gulp.dest root_folder
+        gulp.src [ paths.package_file, paths.bower_file ]
+            .pipe replace project.starter.name,        project.new.name
+            .pipe replace project.starter.version,     project.new.version
+            .pipe replace project.starter.description, project.new.description
+            .pipe replace project.starter.author,      project.new.author
+            .pipe replace project.starter.email,       project.new.email
+            .pipe gulp.dest paths.root_folder
 
-        gulp.src dev_folder + index_file
-            .pipe replace starter_project.name,        new_project.name
-            .pipe replace starter_project.version,     new_project.version
-            .pipe replace starter_project.description, new_project.description
-            .pipe replace starter_project.title,       new_project.title
-            .pipe replace starter_project.keywords,    new_project.keywords
-            .pipe replace starter_project.author,      new_project.author
-            .pipe replace starter_project.email,       new_project.email
-            .pipe gulp.dest dev_folder
+        gulp.src paths.dev_folder + paths.index_file
+            .pipe replace project.starter.name,        project.new.name
+            .pipe replace project.starter.version,     project.new.version
+            .pipe replace project.starter.description, project.new.description
+            .pipe replace project.starter.title,       project.new.title
+            .pipe replace project.starter.keywords,    project.new.keywords
+            .pipe replace project.starter.author,      project.new.author
+            .pipe replace project.starter.email,       project.new.email
+            .pipe gulp.dest paths.dev_folder
 
-        gulp.src js_files
-            .pipe replace starter_project.name, new_project.name
-            .pipe gulp.dest js_folder
+        gulp.src paths.js_files
+            .pipe replace project.starter.name, project.new.name
+            .pipe gulp.dest paths.js_folder

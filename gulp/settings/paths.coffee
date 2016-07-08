@@ -3,9 +3,10 @@ paths =
     package_file  : 'package.json'
     bower_file    : 'bower.json'
     compass_file  : 'config.rb'
+    readme_file   : 'README.md'
     index_file    : 'index.html'
-    docs_folder   : 'documentation/'
-    docs_files    : 'documentation/**/*'
+    doc_folder    : 'out/'
+    doc_files     : 'out/**/*'
     dev_folder    : 'dev/'
     dist_folder   : 'dist/'
     htaccess_file : 'dev/.htaccess'
@@ -25,7 +26,7 @@ paths =
             server : 'dev/',
             port   : 3000
         doc:
-            server : 'documentation/',
+            server : 'out/',
             port   : 4000
         dist:
             server : 'www/',

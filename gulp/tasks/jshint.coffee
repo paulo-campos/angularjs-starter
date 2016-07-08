@@ -1,10 +1,10 @@
 gulp   = require 'gulp'
 jshint = require 'gulp-jshint'
 
-path = require('./../settings/paths.coffee').paths
+paths = require('./../settings/paths.coffee').paths
 #====================
 
 gulp.task 'jshint', ->
-    gulp.src path.js_files
+    gulp.src paths.js_files
         .pipe jshint()
         .pipe jshint.reporter 'default'

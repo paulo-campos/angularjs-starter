@@ -11,9 +11,9 @@ directory './'
 registers =
     compileConfig : (done) -> sequence 'start', done
     compileDev    : (done) -> sequence 'cache', 'jshint', 'doc', 'scss', done
-    compileDist   : (done) -> sequence 'clean-dist', 'copy', 'htmlmin-partials', 'htmlmin-index', 'deploy-dist', done
+    compileDist   : (done) -> sequence 'copy', 'htmlmin-partials', 'htmlmin-index', 'deploy-dist', done
     compileProd   : (done) -> sequence 'deploy-prod', done
-    watchDev  : (done) ->
+    watchDev      : (done) ->
         sync.dev.init paths.server.dev, done
         gulp.watch paths.html_files, [ 'cache' ]
         gulp.watch paths.js_files,   [ 'jshint', 'doc' ]

@@ -29,7 +29,7 @@ paths =
             server : 'out/',
             port   : 4000
         dist:
-            server : 'www/',
+            server : 'dist/',
             port   : 5000
     deploy :
         dev:  'http://localhost:3000/'

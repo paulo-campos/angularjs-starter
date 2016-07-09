@@ -43,6 +43,9 @@
         /**
          * @desc     Executes if there was success in the data request
          * @param    {Object} response Data of response
+         * @param    {Object} status Data of status
+         * @param    {Object} headers Data of headers
+         * @param    {Object} config Data of config
          * @returns  {Object} response Data of response
          * @memberOf App.Services.Receipt
          */
@@ -52,6 +55,10 @@
 
         /**
          * @desc     Executes if not there was success in the data request
+         * @param    {Object} response Data of response
+         * @param    {Object} status Data of status
+         * @param    {Object} headers Data of headers
+         * @param    {Object} config Data of config
          * @memberOf App.Services.Receipt
          */
         function responseFailed (response, status, headers, config) {

@@ -7,7 +7,7 @@
 
     /**
      * @namespace FieldChange
-     * @desc      Calls the method when the field changes
+     * @desc      Executes when the field changes
      * @example   <input type="some-type" name="some-name" ng-model="some.model" input-change="doSomething">
      * @memberOf  App.Directives
      */
@@ -25,8 +25,8 @@
 
         /**
          * @desc     Binds to change any element child
-         * @param    {Object} $scope Scope of the scope
-         * @param    {Object} $element The element
+         * @param    {Object} $scope Data from scope
+         * @param    {Object} $element Data from element
          * @memberOf App.Directives.FieldChange
          */
         function Link ($scope, $element) {

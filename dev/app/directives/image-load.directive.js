@@ -7,7 +7,7 @@
 
     /**
      * @namespace ImageLoad
-     * @desc      Calls the method when the image is loaded
+     * @desc      Executes when the image is loaded
      * @example   <img src="url-of-image" image-load="doSomething">
      * @memberOf  App.Directives
      */
@@ -25,8 +25,8 @@
 
         /**
          * @desc     Binds image the load image
-         * @param    {Object} $scope Scope of the scope
-         * @param    {Object} $element The element
+         * @param    {Object} $scope Data from scope
+         * @param    {Object} $element Data from element
          * @memberOf App.Directives.ImageLoad
          */
         function Link ($scope, $element) {

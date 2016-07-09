@@ -7,8 +7,8 @@
 
     /**
      * @namespace ImageLoad
-     * @desc      Calls the method when a child element changes
-     * @example   <img src="url-of-image" image-load="doSomething"></form>
+     * @desc      Calls the method when the image is loaded
+     * @example   <img src="url-of-image" image-load="doSomething">
      * @memberOf  App.Directives
      */
     function ImageLoad () {
@@ -24,10 +24,10 @@
         ////////////////////
 
         /**
-         * @desc      Binds image the load image
-         * @param     {Object} $scope Data of the scope
-         * @param     {Object} $element Data of the element
-         * @memberOf  App.Directives.ImageLoad
+         * @desc     Binds image the load image
+         * @param    {Object} $scope Scope of the scope
+         * @param    {Object} $element The element
+         * @memberOf App.Directives.ImageLoad
          */
         function Link ($scope, $element) {
             $element.bind('load', function () {

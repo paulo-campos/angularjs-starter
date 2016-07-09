@@ -8,6 +8,7 @@
     DeviceController.$inject = [
         '$scope',
         '$window',
+        'DataFactory',
         'ScreensConstant'
     ];
 
@@ -16,7 +17,7 @@
      * @desc      Controls the scope of the device
      * @memberOf  App.Controllers
      */
-    function DeviceController ($scope, $window, ScreensConstant) {
+    function DeviceController ($scope, $window, DataFactory, ScreensConstant) {
         var device = this;
         ////////////////
 
@@ -26,22 +27,21 @@
         definingDevice();
 
         /**
-         * @desc      Defines type of the device
-         * @memberOf  App.Controllers.Device
+         * @desc     Defines type of the device
+         * @memberOf App.Controllers.Device
          */
         function definingDevice () {
             if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                device.type.desktop = true;
-                return device.type.desktop;
+                DataFactory.request.device = { desktop : true };
             }
-
-            if (($window.innerWidth  > ScreensConstant.WIDTH.MAX.MOBILE) ||
-                ($window.innerHeight > ScreensConstant.WIDTH.MAX.MOBILE)) {
-                device.type.tablet = true;
-                return device.type.desktop;
+            else if (
+                ($window.innerWidth  > ScreensConstant.WIDTH.MAX.SMARTPHONE) ||
+                ($window.innerHeight > ScreensConstant.WIDTH.MAX.SMARTPHONE)) {
+                DataFactory.request.device = { tablet : true };
             }
-
-            device.type.smartphone = true;
+            else {
+                DataFactory.request.device = { smartphone : true };
+            }
         }
     }
 })();

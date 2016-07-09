@@ -13,16 +13,11 @@
     function DataFactory () {
         var data = this;
 
-        data.safe = null;
+        data.safe = {};
         ////////////////////
 
         var helper = {
-            get: function () {
-                return data.safe;
-            },
-            set: function (value) {
-                data.safe = value;
-            }
+            request: data.safe
         };
 
         return helper;

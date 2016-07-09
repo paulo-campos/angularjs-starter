@@ -5,18 +5,22 @@
         .module('angularjs-starter')
         .controller('BaseController', BaseController);
 
-    BaseController.$inject = [ '$scope' ];
+    BaseController.$inject = [
+        '$scope',
+        'DataFactory'
+    ];
 
     /**
      * @namespace Base
      * @desc      Controls the scope of the base
      * @memberOf  App.Controllers
      */
-    function BaseController ($scope) {
+    function BaseController ($scope, DataFactory) {
         var base = this;
         ////////////////
 
-        base.title = 'AngularJS Starter';
+        base.title  = 'AngularJS Starter';
+        base.device = DataFactory.request.device;
         ////////////////
 
         $scope.$on('request.success',  function () {});

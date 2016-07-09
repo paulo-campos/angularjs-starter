@@ -3,21 +3,19 @@
 
     angular
         .module('angularjs-starter')
-        .directive('formChange', FormChange);
-
-    FormChange.$inject = [ '$parse' ];
+        .directive('fieldChange', FieldChange);
 
     /**
-     * @namespace FormChange
-     * @desc      Calls the method when a child element changes
+     * @namespace FieldChange
+     * @desc      Calls the method when the field changes
      * @example   <input type="some-type" name="some-name" ng-model="some.model" input-change="doSomething">
      * @memberOf  App.Directives
      */
-    function FormChange () {
+    function FieldChange () {
         var directive = {
             restrict: 'A',
             scope: {
-                onChange: '=formChange'
+                onChange: '=fieldChange'
             },
             link: Link
         };
@@ -26,15 +24,15 @@
         ////////////////////
 
         /**
-         * @desc      Binds to change any element child
-         * @param     {Object} $scope Data of the scope
-         * @param     {Object} $element Data of the element
-         * @memberOf  App.Directives.FormChange
+         * @desc     Binds to change any element child
+         * @param    {Object} $scope Scope of the scope
+         * @param    {Object} $element The element
+         * @memberOf App.Directives.FieldChange
          */
         function Link ($scope, $element) {
             $element.on('input textarea select', function() {
                 $scope.$apply(function () {
-                    $scope.onChange($element[0].id, $element[0].value);
+                    $scope.onChange($element);
                 });
             });
         }

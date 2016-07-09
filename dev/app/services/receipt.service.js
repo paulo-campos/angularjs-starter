@@ -2,20 +2,23 @@
     'use strict';
 
     angular
-        .module('ionic-starter')
+        .module('angularjs-starter')
         .factory('ReceiptService', ReceiptService);
 
-    ReceiptService.$inject = [ '$http' ];
+    ReceiptService.$inject = [
+        '$http',
+        '$log'
+    ];
 
     /**
      * @namespace Receipt
      * @desc      Request data APIs for the application
      * @memberOf  App.Services
      */
-    function ReceiptService ($http) {
+    function ReceiptService ($http, $log) {
         var service = {
             request: function (service) {
-                return requestData(service);
+                return sendRequest(service);
             }
         };
 
@@ -23,31 +26,39 @@
         ////////////////////
 
         /**
-         * @desc      Requests data from API
-         * @param     {String} service API from use for request
-         * @memberOf  App.Services.Receipt
+         * @desc     Requests data from API
+         * @param    {String} service API from use for request
+         * @memberOf App.Services.Receipt
          */
-        function requestData (service) {
-            return $http.get(service)
+        function sendRequest (service) {
+            var request = {
+                method : 'GET',
+                url    : service
+            };
+
+            return $http.post(request)
                 .then(responseSuccess, responseFailed);
         }
 
         /**
-         * @desc      Executes if there was success in the data request
-         * @param     {Object} response Data of response
-         * @returns   {Object} response Data of response
-         * @memberOf  App.Services.Receipt
+         * @desc     Executes if there was success in the data request
+         * @param    {Object} response Data of response
+         * @returns  {Object} response Data of response
+         * @memberOf App.Services.Receipt
          */
-        function responseSuccess (response) {
+        function responseSuccess (response, status, headers, config) {
             return response;
         }
 
         /**
-         * @desc      Executes if not there was success in the data request
-         * @memberOf  App.Services.Receipt
+         * @desc     Executes if not there was success in the data request
+         * @memberOf App.Services.Receipt
          */
-        function responseFailed () {
-            throw 'Problem to connect with service!';
+        function responseFailed (response, status, headers, config) {
+            $log.error('Response: ' + response);
+            $log.error('Status:   ' + status);
+            $log.error('Headers:  ' + headers);
+            $log.error('Config:   ' + config);
         }
     }
 })();

@@ -25,7 +25,7 @@
     "angular-animate": "^1.5.7",
     "angular-touch": "^1.5.7",
     "angular-off-click": "^1.0.5",
-    "angular-socialshare": "^1.4.5",
+    "angular-socialshare": "angularjs-socialshare#^2.2.3",
     "angulartics-google-analytics": "^0.2.0"
   }
 }

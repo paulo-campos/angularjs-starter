@@ -13,7 +13,10 @@
             'ui.router',
             'ngAnimate',
             'ngTouch',
-            'offClick'
+            'offClick',
+            '720kb.socialshare',
+            'angulartics',
+            'angulartics.google.analytics'
         ]);
 })();
 /**

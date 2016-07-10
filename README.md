@@ -11,6 +11,8 @@ This project aims to streamline starting an application in AngularJS
 ###### Added modules
 - [angular-ui-router](http://ngcordova.com/)
 - [angular-off-click](http://ngmodules.org/modules/angular-off-click)
+- [angular-socialshare](https://github.com/720kb/angular-socialshare)
+- [angulartics-google-analytics](https://github.com/angulartics/angulartics-google-analytics)
 
 ###### Added for development
 - Management of packages for development with [NPM](https://www.npmjs.com/)

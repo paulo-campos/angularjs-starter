@@ -13,8 +13,10 @@ registers =
     compileDev    : (done) -> sequence 'cache', 'jshint', 'doc', 'scss', done
     compileDist   : (done) -> sequence 'copy', 'htmlmin-partials', 'htmlmin-index', 'deploy-dist', done
     compileProd   : (done) -> sequence 'deploy-prod', done
-    watchDev      : (done) ->
+
+    watchDev : (done) ->
         sync.dev.init paths.server.dev, done
+
         gulp.watch paths.html_files, [ 'cache' ]
         gulp.watch paths.js_files,   [ 'jshint', 'doc' ]
         gulp.watch paths.scss_files, [ 'scss' ]
@@ -23,6 +25,7 @@ registers =
 
     watchDoc  : (done) ->
         sync.doc.init paths.server.doc, done
+        
         gulp.watch paths.js_files, [ 'doc' ]
         gulp.watch paths.doc_files
             .on 'change', sync.doc.reload

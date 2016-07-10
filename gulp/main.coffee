@@ -17,10 +17,10 @@ gulp.task 'default', ->
     console.log '================================='
 
 
-gulp.task 'config:start',                       (done) -> register.compileConfig  done
-gulp.task 'compile:dev',                        (done) -> register.compileDev     done
-gulp.task 'compile:dist',   [ 'compile:dev'  ], (done) -> register.compileDist    done
-gulp.task 'compile:prod',   [ 'compile:dist' ], (done) -> register.compileProd    done
-gulp.task 'watch:dev',      [ 'compile:dev'  ], (done) -> register.watchDev       done
-gulp.task 'watch:doc',      [ 'compile:dev'  ], (done) -> register.watchDoc       done
-gulp.task 'watch:dist',     [ 'compile:dist' ], (done) -> register.watchDist      done
+gulp.task 'config:start',                     (done) -> register.compileConfig done
+gulp.task 'compile:dev',                      (done) -> register.compileDev    done
+gulp.task 'compile:dist', [ 'compile:dev'  ], (done) -> register.compileDist   done
+gulp.task 'compile:prod', [ 'compile:dist' ], (done) -> register.compileProd   done
+gulp.task 'watch:dev',    [ 'compile:dev'  ], (done) -> register.watchDev      done
+gulp.task 'watch:doc',    [ 'compile:dev'  ], (done) -> register.watchDoc      done
+gulp.task 'watch:dist',   [ 'compile:dist' ], (done) -> register.watchDist     done

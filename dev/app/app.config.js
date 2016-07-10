@@ -6,6 +6,7 @@
         .config(AppConfig);
 
     AppConfig.$inject = [
+        '$compileProvider',
         '$httpProvider',
         '$urlRouterProvider',
         '$stateProvider'
@@ -16,7 +17,8 @@
      * @desc      Main settings of the application
      * @memberOf  App
      */
-    function AppConfig ($httpProvider, $urlRouterProvider, $stateProvider) {
+    function AppConfig ($compileProvider, $httpProvider, $urlRouterProvider, $stateProvider) {
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp|http):/);
         $httpProvider.interceptors.push('InterceptorFactory');
         $urlRouterProvider.otherwise('/');
 

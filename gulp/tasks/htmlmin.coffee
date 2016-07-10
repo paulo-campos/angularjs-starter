@@ -12,8 +12,8 @@ gulp.task 'htmlmin-partials', ->
     gulp.src paths.html_files
         .pipe useref()
         .pipe gulpif '*.html', htmlmin(
-            removeComments: true
-            collapseWhitespace: true
+            removeComments     : true
+            collapseWhitespace : true
         )
         .pipe gulp.dest paths.app_folder
 
@@ -24,7 +24,8 @@ gulp.task 'htmlmin-index', ->
         .pipe gulpif '*.css', cssnano()
         .pipe gulpif '*.js', uglify()
         .pipe gulpif '*.html', htmlmin(
-            removeComments: true
-            collapseWhitespace: true
+            minifyJS           : true
+            removeComments     : true
+            collapseWhitespace : true
         )
         .pipe gulp.dest paths.dist_folder

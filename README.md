@@ -19,6 +19,7 @@ This project aims to streamline starting an application in AngularJS
 - CSS compilation with [SASS](http://sass-lang.com/) using [Compass](http://compass-style.org/)
 - Checking javascript with [JSHint](http://jshint.com/)
 - Generate javascript documentation with [JSDoc](http://usejsdoc.org/)
+- Livereload with [Browser Sync](https://www.browsersync.io/)
 - Good practice with [Angular style guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
 
 ### Dependencies
@@ -32,7 +33,7 @@ For the install all dependencies, run the command:
 
     npm install
 
-This will:
+This will:  
     - Install the NPM packages
     - Install the Bower packages
     - Show the Gulp tasks

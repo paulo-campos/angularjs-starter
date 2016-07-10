@@ -34,9 +34,9 @@ For the install all dependencies, run the command:
     npm install
 
 This will:  
-    - Install the NPM packages
-    - Install the Bower packages
-    - Show the Gulp tasks
+- Install the NPM packages
+- Install the Bower packages
+- Show the Gulp tasks
 
 ### Workflow
 Before everthing, fill the data object **project.new** in **gulp/settings/project.coffee** file and run the command:

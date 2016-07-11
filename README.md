@@ -40,6 +40,29 @@ This will:
 - Install the Bower packages
 - Show the Gulp tasks
 
+### Structure
+    ├── README.md       - Documentation of project
+    ├── package.json    - Environment dependencies management by NPM  
+    ├── gulpfile.js     - Initiation of builds  
+    ├── bower.json      - Application dependencies management by Bower  
+    ├── .gitignore      - Tracking skipped files  
+    ├── .travis.yml     - Configuration for Environment  
+    ├── .editorconfig   - Configuration for general syntaxe  
+    ├── .bowerrc        - Configuration for Bower  
+    ├── .jshintrc       - Configuration for JSHint  
+    ├── config.rb       - Configuration for Compass  
+    ├── node_modules/   - Development packages  
+    ├── gulp/           - Configuration of all Gulp tasks  
+    ├── dev/  
+    │   ├── index.html  - Main Ionic app entry point  
+    │   ├── libs/       - Libraries managed by Bower  
+    │   ├── app/        - Custom AngularJS  
+    │   ├── scss/       - SCSS Modularized  
+    │   ├── assets/     - Acessories files  
+    ├── .sass-cache/    - Cached by Compass  
+    ├── out/            - Javascript documentation  
+    ├── dist/           - Application for distribuition
+
 ### Workflow
 Before everthing, fill the data object **project.new** in **gulp/settings/project.coffee** file and run the command:
 

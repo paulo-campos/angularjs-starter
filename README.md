@@ -25,12 +25,14 @@ This project aims to streamline starting an application in AngularJS
 - Good practice with [Angular style guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
 
 ### Dependencies
+
 There are dependencies required for this project in AngularJS, then to install them or update them, with [NodeJS and your NPM](https://nodejs.org/en/) and [Ruby](http://rubyinstaller.org/)(for Windows) already installed, run the commands:
 
     npm install -g gulp bower coffee-script
     gem install sass compass
 
 ### Installation
+
 For the install all dependencies, run the command:
 
     npm install
@@ -41,6 +43,7 @@ This will:
 - Show the Gulp tasks
 
 ### Structure
+
     ├── README.md       - Documentation of project
     ├── package.json    - Environment dependencies management by NPM  
     ├── gulpfile.js     - Initiation of builds  
@@ -64,6 +67,7 @@ This will:
     ├── dist/           - Application for distribuition
 
 ### Workflow
+
 Before everthing, fill the data object **project.new** in **gulp/settings/project.coffee** file and run the command:
 
     $ gulp config:start
@@ -77,6 +81,10 @@ This will set all settings to your project needs, after you can use any of the f
 |`$ gulp watch:dev`      | Watch the development in browser with livereload   |
 |`$ gulp watch:doc`      | Watch the documentation in browser with livereload |
 |`$ gulp watch:dist`     | Shows the distribuition in browser                 |
+
+### License
+
+[MIT License](http://opensource.org/licenses/mit-license.php)
 
 ### Be historic!
 

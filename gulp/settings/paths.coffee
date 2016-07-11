@@ -15,21 +15,23 @@ paths =
     scss_folder   : 'dev/scss/'
     scss_files    : 'dev/scss/**/*.scss'
     assets_files  : 'dev/assets/**/*'
+    images_files  : 'dev/assets/images/**/*'
     css_folder    : 'dev/assets/stylesheets/'
     css_files     : 'dev/assets/stylesheets/**/*'
     app_files     : 'dev/app/**/*'
     html_files    : 'dev/app/**/*.html'
     assets_folder : 'dist/assets/'
+    images_folder : 'dist/assets/images/'
     app_folder    : 'dist/app/'
     server :
         dev:
-            server : 'dev/',
+            server : 'dev/'
             port   : 3000
         doc:
-            server : 'out/',
+            server : 'out/'
             port   : 4000
         dist:
-            server : 'dist/',
+            server : 'dist/'
             port   : 5000
     deploy :
         dev:  'http://localhost:3000/'

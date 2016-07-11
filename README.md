@@ -19,6 +19,7 @@ This project aims to streamline starting an application in AngularJS
 - Management of libs for the project with [Bower](https://bower.io/)
 - Configuration builds with [Gulp](http://gulpjs.com/) using [Coffee Script](http://coffeescript.org/)
 - CSS compilation with [SASS](http://sass-lang.com/) using [Compass](http://compass-style.org/)
+- Images optimization with [Imagemin](https://www.npmjs.com/package/gulp-image-optimization)
 - Checking javascript with [JSHint](http://jshint.com/)
 - Generate javascript documentation with [JSDoc](http://usejsdoc.org/)
 - Livereload with [Browser Sync](https://www.browsersync.io/)

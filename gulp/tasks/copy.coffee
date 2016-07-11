@@ -9,5 +9,9 @@ gulp.task 'copy', ->
         .pipe clean paths.dist_folder
         .pipe gulp.dest paths.dist_folder
 
-    gulp.src [ paths.assets_files, '!' + paths.css_files ], read : false
+    gulp.src [
+            paths.assets_files,
+            '!' + paths.images_files,
+            '!' + paths.css_files
+        ], read : false
         .pipe gulp.dest paths.assets_folder

@@ -5,7 +5,7 @@ paths = require('./../settings/paths.coffee').paths
 #====================
 
 gulp.task 'copy', ->
-    gulp.src paths.htaccess_file, read : false
+    gulp.src paths.htaccess_file
         .pipe clean paths.dist_folder
         .pipe gulp.dest paths.dist_folder
 

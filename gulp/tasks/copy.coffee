@@ -13,5 +13,5 @@ gulp.task 'copy', ->
             paths.assets_files,
             '!' + paths.images_files,
             '!' + paths.css_files
-        ], read : false
+        ]
         .pipe gulp.dest paths.assets_folder

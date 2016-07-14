@@ -16,10 +16,10 @@
         data.safe = {};
         ////////////////////
 
-        var helper = {
+        var factory = {
             request: data.safe
         };
 
-        return helper;
+        return factory;
     }
 }());

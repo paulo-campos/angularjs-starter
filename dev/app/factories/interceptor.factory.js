@@ -13,7 +13,7 @@
      * @memberOf  App.Factories
      */
     function InterceptorFactory ($rootScope) {
-        var helper = {
+        var factory = {
             request: function (success) {
                 return requestSuccess(success);
             },
@@ -28,7 +28,7 @@
             }
         };
 
-        return helper;
+        return factory;
         ////////////////////
 
         /**

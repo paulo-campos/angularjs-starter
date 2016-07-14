@@ -6,7 +6,6 @@
         .controller('DeviceController', DeviceController);
 
     DeviceController.$inject = [
-        '$scope',
         '$window',
         'DataFactory',
         'ScreensConstant'
@@ -17,13 +16,7 @@
      * @desc      Controls the scope of the device
      * @memberOf  App.Controllers
      */
-    function DeviceController ($scope, $window, DataFactory, ScreensConstant) {
-        var device = this;
-        ////////////////
-
-        device.type = {};
-        ////////////////////
-
+    function DeviceController ($window, DataFactory, ScreensConstant) {
         definingDevice();
 
         /**

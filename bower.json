@@ -1,13 +1,13 @@
 {
   "name": "angularjs-starter",
   "description": "This project aims to streamline starting an application in AngularJS",
+  "private": "false",
   "main": "gulpfile.js",
   "author": {
     "name": "Paulo Campos",
     "email": "paulovitorwd@gmail.com"
   },
-  "license": "ISC",
-  "homepage": "https://github.com/paulovitorwd/angular-starter",
+  "homepage": "https://github.com/paulovitorwd/angular-starter#readme",
   "moduleType": [
     "globals"
   ],
@@ -27,5 +27,6 @@
     "angular-off-click": "^1.0.5",
     "angular-socialshare": "angularjs-socialshare#^2.2.3",
     "angulartics-google-analytics": "^0.2.0"
-  }
+  },
+  "license": "MIT"
 }

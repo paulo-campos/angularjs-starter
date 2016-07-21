@@ -9,17 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/paulovitorwd/angular-starter.git"
+    "url": "git+https://github.com/paulovitorwd/angular-starter.git"
   },
   "author": {
     "name": "Paulo Campos",
     "email": "paulovitorwd@gmail.com"
   },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/paulovitorwd/angular-starter/issues"
   },
-  "homepage": "https://github.com/paulovitorwd/angular-starter",
+  "homepage": "https://github.com/paulovitorwd/angular-starter#readme",
   "devDependencies": {
     "bower": "^1.7.9",
     "browser-sync": "^2.13.0",
@@ -43,6 +42,7 @@
   },
   "engines": {
     "node": ">=4.3",
-    "npm": "^3.9.5"
-  }
+    "npm": "^3.10.5"
+  },
+  "license": "MIT"
 }

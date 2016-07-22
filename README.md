@@ -79,9 +79,9 @@ This will set all settings to your project needs, after you can use any of the f
 | ---------------------- |:--------------------------------------------------:|
 |`$ gulp compile:dev`    | Compilation of the files for development           |
 |`$ gulp compile:dist`   | Compilation of the files for distribuition         |
-|`$ gulp watch:dev`      | Watch the development in browser with livereload   |
-|`$ gulp watch:doc`      | Watch the documentation in browser with livereload |
-|`$ gulp watch:dist`     | Shows the distribuition in browser                 |
+|`$ gulp serve:dev`      | Watch the development in browser with livereload   |
+|`$ gulp serve:doc`      | Watch the documentation in browser with livereload |
+|`$ gulp serve:dist`     | Shows the distribuition in browser                 |
 
 ### License
 

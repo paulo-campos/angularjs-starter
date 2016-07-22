@@ -18,7 +18,7 @@ paths =
     js_folder     : 'dev/app/'
     html_files    : 'dev/app/**/*.html'
     scss_folder   : 'dev/scss/'
-    scss_files    : 'dev/scss/**/*'
+    scss_files    : 'dev/scss/**/*.scss'
     assets_files  : 'dev/assets/**/*'
     images_files  : 'dev/assets/images/**/*'
     css_folder    : 'dev/assets/stylesheets/'

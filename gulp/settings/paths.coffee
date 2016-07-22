@@ -1,4 +1,4 @@
-project = require('./../settings/project.coffee').project
+project = require('./project.coffee').project
 #====================
 
 paths =

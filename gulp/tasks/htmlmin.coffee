@@ -28,4 +28,8 @@ gulp.task 'htmlmin-index', ->
             removeComments     : true
             collapseWhitespace : true
         )
+        .pipe gulpif '*.css', cssnano(
+            discardComments :
+                removeAll : true
+        )
         .pipe gulp.dest paths.dist_folder

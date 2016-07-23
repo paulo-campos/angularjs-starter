@@ -10,9 +10,9 @@ gulp.task 'default', ->
     console.log '|      $ gulp compile:dev       |'
     console.log '|      $ gulp compile:dist      |'
     console.log '|      $ gulp compile:prod      |'
-    console.log '|      $ gulp watch:dev         |'
-    console.log '|      $ gulp watch:doc         |'
-    console.log '|      $ gulp watch:dist        |'
+    console.log '|      $ gulp serve:dev         |'
+    console.log '|      $ gulp serve:doc         |'
+    console.log '|      $ gulp serve:dist        |'
     console.log '|                               |'
     console.log '================================='
 
@@ -21,6 +21,6 @@ gulp.task 'config:start',                     (done) -> register.compileConfig d
 gulp.task 'compile:dev',                      (done) -> register.compileDev    done
 gulp.task 'compile:dist', [ 'compile:dev'  ], (done) -> register.compileDist   done
 gulp.task 'compile:prod', [ 'compile:dist' ], (done) -> register.compileProd   done
-gulp.task 'watch:dev',    [ 'compile:dev'  ], (done) -> register.watchDev      done
-gulp.task 'watch:doc',    [ 'compile:dev'  ], (done) -> register.watchDoc      done
-gulp.task 'watch:dist',   [ 'compile:dist' ], (done) -> register.watchDist     done
+gulp.task 'serve:dev',    [ 'compile:dev'  ], (done) -> register.serveDev      done
+gulp.task 'serve:doc',    [ 'compile:dev'  ], (done) -> register.serveDoc      done
+gulp.task 'serve:dist',   [ 'compile:dist' ], (done) -> register.serveDist     done

@@ -21,7 +21,7 @@ registers =
         gulp.watch paths.js_files,   [ 'jshint', 'doc' ]
         gulp.watch paths.scss_files, [ 'scss' ]
         gulp.watch [
-            paths.index_file,
+            paths.dev_folder + paths.index_file,
             paths.app_files,
             paths.assets_files,
             '!' + paths.css_files

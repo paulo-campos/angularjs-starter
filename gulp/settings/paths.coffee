@@ -26,19 +26,19 @@ paths =
     app_folder    : 'dist/app/'
     assets_folder : 'dist/assets/'
     images_folder : 'dist/assets/images/'
-    server :
-        dev:
+    server        :
+        dev  :
             server : 'dev/'
             port   : 3000
-        doc:
+        doc  :
             server : 'out/'
             port   : 4000
-        dist:
+        dist :
             server : 'dist/'
             port   : 5000
-    deploy :
-        dev:  'http://localhost:3000/'
-        dist: 'http://localhost:5000/'
-        prod: project.new.url
+    deploy        :
+        dev  : 'http://localhost:3000/'
+        dist : 'http://localhost:5000/'
+        prod : project.new.url
 
 exports.paths = paths

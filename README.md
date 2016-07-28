@@ -50,7 +50,8 @@ This will:
     ├── bower.json         - Application dependencies management by Bower  
     ├── gulpfile.js        - Initiation of tasks  
     ├── .gitignore         - Tracker skipped files  
-    ├── .travis.yml        - Definitions for Environment  
+    ├── .travis.yml        - Definitions for environment  
+    ├── .editorconfig      - Definitions for general syntax code  
     ├── node_modules/      - Development packages  
     ├── bower_components/  - Libraries managed by Bower  
     ├── gulp/              - Configuration of Gulp tasks  
@@ -58,7 +59,7 @@ This will:
     │   ├── .htaccess      - Definitions for server entry point  
     |   ├── index.html     - Main application entry point  
     │   ├── app/           - Custom AngularJS  
-    │   ├── scss/          - SCSS Modularized  
+    │   ├── scss/          - SCSS modularized  
     │   ├── assets/        - Accessories files  
     ├── .sass-cache/       - Cached by Compass  
     ├── doc/               - Javascript documentation  

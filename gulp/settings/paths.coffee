@@ -3,13 +3,10 @@ project = require('./project').project
 
 paths =
     root_folder   : './'
+    readme_file   : 'README.md'
     package_file  : 'package.json'
     bower_file    : 'bower.json'
-    compass_file  : 'config.rb'
-    readme_file   : 'README.md'
     index_file    : 'index.html'
-    doc_folder    : 'doc/'
-    doc_files     : 'doc/**/*'
     dev_folder    : 'dev/'
     dist_folder   : 'dist/'
     htaccess_file : 'dev/.htaccess'
@@ -28,6 +25,8 @@ paths =
     app_folder    : 'dist/app/'
     assets_folder : 'dist/assets/'
     images_folder : 'dist/assets/images/'
+    doc_folder    : 'doc/'
+    doc_files     : 'doc/**/*'
     server        :
         dev  :
             server :
@@ -42,8 +41,8 @@ paths =
             server : 'dist/'
             port   : 5000
     deploy        :
-        dev  : 'http://localhost:3000/'
-        dist : 'http://localhost:5000/'
+        dev  : 'localhost:3000/'
+        dist : 'localhost:5000/'
         prod : project.new.url
 
 exports.paths = paths

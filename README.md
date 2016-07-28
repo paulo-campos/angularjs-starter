@@ -51,12 +51,11 @@ This will:
     ├── gulpfile.js        - Initiation of tasks  
     ├── .gitignore         - Tracker skipped files  
     ├── .travis.yml        - Definitions for Environment  
-    ├── .editorconfig      - Definitions for general syntax code  
     ├── node_modules/      - Development packages  
-    ├── gulp/              - Configuration of Gulp tasks
     ├── bower_components/  - Libraries managed by Bower  
-    ├── dev/               - Application for development
-    │   ├── .htaccess      - Definitions for server entry point
+    ├── gulp/              - Configuration of Gulp tasks  
+    ├── dev/               - Application for development  
+    │   ├── .htaccess      - Definitions for server entry point  
     |   ├── index.html     - Main application entry point  
     │   ├── app/           - Custom AngularJS  
     │   ├── scss/          - SCSS Modularized  

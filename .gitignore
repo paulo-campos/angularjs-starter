@@ -1,9 +1,9 @@
 # Ignored folders
 .sass-cache/
+bower_components/
 dist/
+doc/
 node_modules/
-libs/
-out/
 stylesheets/
 
 # Ignored files

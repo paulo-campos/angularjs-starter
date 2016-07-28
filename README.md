@@ -45,27 +45,25 @@ This will:
 
 ### Structure
 
-    ├── README.md       - Documentation of project
-    ├── package.json    - Environment dependencies management by NPM  
-    ├── gulpfile.js     - Initiation of builds  
-    ├── bower.json      - Application dependencies management by Bower  
-    ├── .gitignore      - Tracking skipped files  
-    ├── .travis.yml     - Configuration for Environment  
-    ├── .editorconfig   - Configuration for general syntaxe  
-    ├── .bowerrc        - Configuration for Bower  
-    ├── .jshintrc       - Configuration for JSHint  
-    ├── config.rb       - Configuration for Compass  
-    ├── node_modules/   - Development packages  
-    ├── gulp/           - Configuration of all Gulp tasks  
-    ├── dev/  
-    │   ├── index.html  - Main Ionic app entry point  
-    │   ├── libs/       - Libraries managed by Bower  
-    │   ├── app/        - Custom AngularJS  
-    │   ├── scss/       - SCSS Modularized  
-    │   ├── assets/     - Acessories files  
-    ├── .sass-cache/    - Cached by Compass  
-    ├── out/            - Javascript documentation  
-    ├── dist/           - Application for distribuition
+    ├── README.md          - Documentation of project  
+    ├── package.json       - Environment dependencies management by NPM  
+    ├── bower.json         - Application dependencies management by Bower  
+    ├── gulpfile.js        - Initiation of tasks  
+    ├── .gitignore         - Tracker skipped files  
+    ├── .travis.yml        - Definitions for Environment  
+    ├── .editorconfig      - Definitions for general syntax code  
+    ├── node_modules/      - Development packages  
+    ├── gulp/              - Configuration of Gulp tasks
+    ├── bower_components/  - Libraries managed by Bower  
+    ├── dev/               - Application for development
+    │   ├── .htaccess      - Definitions for server entry point
+    |   ├── index.html     - Main application entry point  
+    │   ├── app/           - Custom AngularJS  
+    │   ├── scss/          - SCSS Modularized  
+    │   ├── assets/        - Accessories files  
+    ├── .sass-cache/       - Cached by Compass  
+    ├── doc/               - Javascript documentation  
+    ├── dist/              - Application for distribuition
 
 ### Workflow
 
@@ -79,6 +77,7 @@ This will set all settings to your project needs, after you can use any of the f
 | ---------------------- |:--------------------------------------------------:|
 |`$ gulp compile:dev`    | Compilation of the files for development           |
 |`$ gulp compile:dist`   | Compilation of the files for distribuition         |
+|`$ gulp compile:prod`   | Compilation of the files for production            |
 |`$ gulp serve:dev`      | Watch the development in browser with livereload   |
 |`$ gulp serve:doc`      | Watch the documentation in browser with livereload |
 |`$ gulp serve:dist`     | Shows the distribuition in browser                 |

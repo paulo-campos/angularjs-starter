@@ -6,5 +6,8 @@ paths = require('./../settings/paths').paths
 
 gulp.task 'jshint', ->
     gulp.src paths.js_files
-        .pipe jshint()
+        .pipe jshint(
+            'browser' : true,
+            'strict'  : true
+        )
         .pipe jshint.reporter 'default'

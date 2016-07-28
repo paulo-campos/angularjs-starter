@@ -1,5 +1,5 @@
 gulp     = require 'gulp'
-register = require('./tasks/registers.coffee').registers
+register = require('./tasks/registers').registers
 #====================
 
 gulp.task 'default', ->

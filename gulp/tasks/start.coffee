@@ -1,9 +1,9 @@
 gulp    = require 'gulp'
 replace = require 'gulp-replace'
 
-project = require('./../settings/project.coffee').project
-paths   = require('./../settings/paths.coffee').paths
-sync    = require('./../settings/sync.coffee').sync
+project = require('./../settings/project').project
+paths   = require('./../settings/paths').paths
+sync    = require('./../settings/sync').sync
 #====================
 
 gulp.task 'start', ->

@@ -2,8 +2,8 @@ gulp    = require 'gulp'
 clean   = require 'gulp-clean-dest'
 compass = require 'gulp-compass'
 
-paths = require('./../settings/paths.coffee').paths
-sync  = require('./../settings/sync.coffee').sync
+paths = require('./../settings/paths').paths
+sync  = require('./../settings/sync').sync
 #====================
 
 gulp.task 'scss', ->

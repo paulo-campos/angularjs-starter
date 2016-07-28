@@ -1,7 +1,7 @@
 gulp    = require 'gulp'
 replace = require 'gulp-replace'
 
-paths = require('./../settings/paths.coffee').paths
+paths = require('./../settings/paths').paths
 #====================
 
 gulp.task 'deploy-dist', ->

@@ -1,7 +1,7 @@
 gulp    = require 'gulp'
 imageop = require 'gulp-image-optimization'
 
-paths = require('./../settings/paths.coffee').paths
+paths = require('./../settings/paths').paths
 #====================
 
 gulp.task 'imagesmin', (done) ->

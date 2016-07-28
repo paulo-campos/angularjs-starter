@@ -1,7 +1,7 @@
 gulp  = require 'gulp'
 cache = require 'gulp-angular-templatecache'
 
-paths = require('./../settings/paths.coffee').paths
+paths = require('./../settings/paths').paths
 #====================
 
 gulp.task 'cache', ->

@@ -5,7 +5,7 @@ htmlmin = require 'gulp-htmlmin'
 cssnano = require 'gulp-cssnano'
 uglify  = require 'gulp-uglify'
 
-paths = require('./../settings/paths.coffee').paths
+paths = require('./../settings/paths').paths
 #====================
 
 gulp.task 'htmlmin-partials', ->

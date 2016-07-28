@@ -1,7 +1,7 @@
 gulp  = require 'gulp'
 clean = require 'gulp-clean-dest'
 
-paths = require('./../settings/paths.coffee').paths
+paths = require('./../settings/paths').paths
 #====================
 
 gulp.task 'copy', ->

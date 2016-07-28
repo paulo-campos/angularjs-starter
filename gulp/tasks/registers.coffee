@@ -2,8 +2,8 @@ gulp      = require 'gulp'
 sequence  = require 'run-sequence'
 directory = require 'require-dir'
 
-paths = require('./../settings/paths.coffee').paths
-sync  = require('./../settings/sync.coffee').sync
+paths = require('./../settings/paths').paths
+sync  = require('./../settings/sync').sync
 
 directory './'
 #====================

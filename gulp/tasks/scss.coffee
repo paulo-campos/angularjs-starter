@@ -12,8 +12,8 @@ gulp.task 'scss', ->
         .pipe compass
             sass      : paths.scss_folder
             css       : paths.css_folder
-            images    : paths.figures_folder
-            fonts     : paths.fonts_files
+            image     : paths.images_local
+            font      : paths.fonts_local
             relative  : true
             comments  : true
             sourcemap : true

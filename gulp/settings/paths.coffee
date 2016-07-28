@@ -20,18 +20,20 @@ paths =
     scss_folder    : 'dev/scss/'
     scss_files     : 'dev/scss/**/*.scss'
     assets_files   : 'dev/assets/**/*'
+    images_local   : 'dev/assets/images/app'
     images_files   : 'dev/assets/images/**/*'
-    figures_folder : 'dev/assets/images/app/'
     css_folder     : 'dev/assets/stylesheets/'
     css_files      : 'dev/assets/stylesheets/**/*'
-    fonts_files    : 'dev/assets/fonts/'
+    fonts_local    : 'dev/assets/fonts'
     app_folder     : 'dist/app/'
     assets_folder  : 'dist/assets/'
     images_folder  : 'dist/assets/images/'
     server        :
         dev  :
             server :
-                baseDir: [ './', 'dev/' ]
+                baseDir : 'dev/'
+                routes  :
+                    '/bower_components' : 'bower_components'
             port   : 3000
         doc  :
             server : 'doc/'

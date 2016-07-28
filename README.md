@@ -58,6 +58,7 @@ This will:
     ├── dev/               - Application for development  
     │   ├── .htaccess      - Definitions for server entry point  
     |   ├── index.html     - Main application entry point  
+    |   ├── templates.js   - Cache for views  
     │   ├── app/           - Custom AngularJS  
     │   ├── scss/          - SCSS modularized  
     │   ├── assets/        - Accessories files  

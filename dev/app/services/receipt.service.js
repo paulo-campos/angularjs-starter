@@ -36,7 +36,7 @@
                 url    : service
             };
 
-            return $http.post(request)
+            return $http(request)
                 .then(responseSuccess, responseFailed);
         }
 

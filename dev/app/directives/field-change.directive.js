@@ -24,16 +24,24 @@
         ////////////////////
 
         /**
-         * @desc     Binds to change any element child
-         * @param    {Object} $scope Data from scope
-         * @param    {Object} $element Data from element
-         * @memberOf App.Directives.FieldChange
+         * @desc      Binds to change any element child
+         * @param     {Object} $scope Data from scope
+         * @param     {Object} $element Data from element
+         * @memberOf  App.Directives.FieldChange
          */
         function Link ($scope, $element) {
-            $element.on('input textarea select', function() {
-                $scope.$apply(function () {
-                    $scope.onChange($element);
-                });
+            $element.on('input textarea select', function () { onChange($scope, $element); });
+        }
+
+        /**
+         * @desc      Runs past method when the element changes
+         * @param     {Object} $scope Data from scope
+         * @param     {Object} $element Data from element
+         * @memberOf  App.Directives.FieldChange
+         */
+        function onChange ($scope, $element) {
+            $scope.$apply(function () {
+                $scope.onChange($element);
             });
         }
     }

@@ -24,17 +24,15 @@
          * @memberOf App.Controllers.Device
          */
         function definingDevice () {
-            if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
                 DataFactory.request.device = { desktop : true };
-            }
             else if (
                 ($window.innerWidth  > ScreensConstant.WIDTH.MAX.SMARTPHONE) ||
                 ($window.innerHeight > ScreensConstant.WIDTH.MAX.SMARTPHONE)) {
                 DataFactory.request.device = { tablet : true };
             }
-            else {
+            else
                 DataFactory.request.device = { smartphone : true };
-            }
         }
     }
 })();

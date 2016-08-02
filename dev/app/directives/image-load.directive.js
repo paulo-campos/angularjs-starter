@@ -24,19 +24,26 @@
         ////////////////////
 
         /**
-         * @desc     Binds image the load image
-         * @param    {Object} $scope Data from scope
-         * @param    {Object} $element Data from element
-         * @memberOf App.Directives.ImageLoad
+         * @desc      Binds image the load image
+         * @param     {Object} $scope Data from scope
+         * @param     {Object} $element Data from element
+         * @memberOf  App.Directives.ImageLoad
          */
         function Link ($scope, $element) {
-            $element.bind('load', function () {
-                $scope.$apply(function () {
-                    $scope.onLoad($element);
-                });
-            });
-
+            $element.bind('load',  function () { onLoad($scope, $element); });
             $element.bind('error', function () {});
+        }
+
+        /**
+         * @desc      Runs past method when the element is loaded
+         * @param     {Object} $scope Data from scope
+         * @param     {Object} $element Data from element
+         * @memberOf  App.Directives.ImageLoad
+         */
+        function onLoad ($scope, $element) {
+            $scope.$apply(function () {
+                $scope.onLoad($element);
+            });
         }
     }
 })();

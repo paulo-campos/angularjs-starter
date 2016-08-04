@@ -9,6 +9,7 @@ gulp.task 'jshint', ->
         .pipe jshint(
             'indent'  : 4,
             'strict'  : true,
-            'browser' : true
+            'browser' : true,
+            'expr'    : true
         )
         .pipe jshint.reporter 'default'

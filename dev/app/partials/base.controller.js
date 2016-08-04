@@ -21,15 +21,11 @@
 
         base.title  = 'AngularJS Starter';
         base.device = DataFactory.request.device;
-        // $scope.$on('request.success',  requestSuccess);
-        // $scope.$on('response.success', responseSuccess);
-        // $scope.$on('request.error',    requestError);
-        // $scope.$on('response.error',   responseError);
+
+        // $scope.$on('request.success',  function () { requestRunning(true);  });
+        // $scope.$on('response.success', function () { requestRunning(false); });
         ////////////////
 
-        // function requestSuccess (event, data) {}
-        // function responseSuccess (event, data) {}
-        // function requestError (event, data) {}
-        // function responseError (event, data) {}
+        // function requestRunning (status) {}
     }
 })();

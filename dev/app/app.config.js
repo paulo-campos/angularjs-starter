@@ -25,7 +25,7 @@
         $stateProvider
         .state('base', {
             url          : '/',
-            templateUrl  : 'app/partials/base/base.html',
+            templateUrl  : 'app/partials/base.html',
             controller   : 'BaseController',
             controllerAs : 'base'
         });

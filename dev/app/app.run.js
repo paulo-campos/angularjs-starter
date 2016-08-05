@@ -3,7 +3,7 @@
 
     angular
         .module('angularjs-starter')
-        .controller('AppRun', AppRun);
+        .run(AppRun);
 
     AppRun.$inject = [
         '$window',

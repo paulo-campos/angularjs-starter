@@ -37,7 +37,7 @@
                 url     : service,
                 data    : data,
                 headers : {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8;'
                 }
             };
 

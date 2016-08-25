@@ -9,10 +9,11 @@ directory './'
 #====================
 
 registers =
-    compileConfig : (done) -> sequence 'start', done
-    compileDev    : (done) -> sequence 'cache', 'jshint', 'doc', 'scss', done
-    compileDist   : (done) -> sequence 'copy', 'imagesmin', 'htmlmin-partials', 'htmlmin-index', 'deploy-dist', done
-    compileProd   : (done) -> sequence 'deploy-prod', done
+    configStart : (done) -> sequence 'start', done
+
+    compileDev  : (done) -> sequence 'cache', 'jshint', 'doc', 'scss', done
+    compileDist : (done) -> sequence 'copy', 'imagesmin', 'htmlmin-partials', 'htmlmin-index', 'deploy-dist', done
+    compileProd : (done) -> sequence 'deploy-prod', done
 
     serveDev : (done) ->
         sync.dev.init paths.server.dev, done

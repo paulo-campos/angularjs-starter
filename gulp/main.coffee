@@ -17,10 +17,10 @@ gulp.task 'default', ->
     console.log '================================='
 
 
-gulp.task 'config:start',                     (done) -> register.compileConfig done
-gulp.task 'compile:dev',                      (done) -> register.compileDev    done
-gulp.task 'compile:dist', [ 'compile:dev'  ], (done) -> register.compileDist   done
-gulp.task 'compile:prod', [ 'compile:dist' ], (done) -> register.compileProd   done
-gulp.task 'serve:dev',    [ 'compile:dev'  ], (done) -> register.serveDev      done
-gulp.task 'serve:doc',    [ 'compile:dev'  ], (done) -> register.serveDoc      done
-gulp.task 'serve:dist',   [ 'compile:dist' ], (done) -> register.serveDist     done
+gulp.task 'config:start',                     (done) -> register.configStart done
+gulp.task 'compile:dev',                      (done) -> register.compileDev  done
+gulp.task 'compile:dist', [ 'compile:dev'  ], (done) -> register.compileDist done
+gulp.task 'compile:prod', [ 'compile:dist' ], (done) -> register.compileProd done
+gulp.task 'serve:dev',    [ 'compile:dev'  ], (done) -> register.serveDev    done
+gulp.task 'serve:doc',    [ 'compile:dev'  ], (done) -> register.serveDoc    done
+gulp.task 'serve:dist',   [ 'compile:dist' ], (done) -> register.serveDist   done

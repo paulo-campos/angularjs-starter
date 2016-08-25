@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paulovitorwd/angular-starter.git"
+    "url": "git+https://github.com/paulovitorwd/angularjs-starter.git"
   },
   "author": {
     "name": "Paulo Campos",
     "email": "paulovitorwd@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/paulovitorwd/angular-starter/issues"
+    "url": "https://github.com/paulovitorwd/angularjs-starter/issues"
   },
-  "homepage": "https://github.com/paulovitorwd/angular-starter#readme",
+  "homepage": "https://github.com/paulovitorwd/angularjs-starter#readme",
   "devDependencies": {
     "bower": "^1.7.9",
     "browser-sync": "^2.14.0",

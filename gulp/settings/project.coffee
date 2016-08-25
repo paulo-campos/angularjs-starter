@@ -1,6 +1,6 @@
 project =
     starter :
-        repository  : 'https://github.com/paulovitorwd/ionic-starter'
+        repository  : 'https://github.com/paulovitorwd/angularjs-starter'
         name        : 'angularjs-starter'
         version     : '1.0.0'
         description : 'This project aims to streamline starting an application in AngularJS'

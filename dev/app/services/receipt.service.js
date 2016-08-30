@@ -3,7 +3,7 @@
 
     angular
         .module('angularjs-starter')
-        .factory('ReceiptService', ReceiptService);
+        .service('ReceiptService', ReceiptService);
 
     ReceiptService.$inject = [
         '$http',

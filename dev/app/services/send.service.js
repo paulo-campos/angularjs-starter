@@ -3,7 +3,7 @@
 
     angular
         .module('angularjs-starter')
-        .factory('SendService', SendService);
+        .service('SendService', SendService);
 
     SendService.$inject = [
         '$http',

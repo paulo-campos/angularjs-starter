@@ -12,6 +12,7 @@
         .module('angularjs-starter', [
             'ui.router',
             'ngAnimate',
+            'ngResource',
             'ngTouch',
             'offClick',
             '720kb.socialshare',

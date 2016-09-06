@@ -1,12 +1,12 @@
-$landscape: '(orientation: landscape)';
+$portrait:  "(orientation: portrait)";
+$landscape: "(orientation: landscape)";
 
-$h-mini:   '(min-height: 370px)';
-$h-small:  '(min-height: 490px)';
-$h-medium: '(min-height: 600px)';
-$h-bigger: '(min-height: 700px)';
+$w-mini:   "(min-width: 400px)";
+$w-small:  "(min-width: 768px)";
+$w-medium: "(min-width: 992px)";
+$w-bigger: "(min-width: 1200px)";
 
-$w-mini:   '(min-width: 340px)';
-$w-small:  '(min-width: 600px)';
-$w-medium: '(min-width: 700px)';
-$w-bigger: '(min-width: 1000px)';
-$w-large:  '(min-width: 1400px)';
+$h-mini:   "(min-height: 400px)";
+$h-small:  "(min-height: 768px)";
+$h-medium: "(min-height: 992px)";
+$h-bigger: "(min-height: 1200px)";

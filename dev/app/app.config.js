@@ -18,7 +18,7 @@
      * @memberOf  App
      */
     function AppConfig ($compileProvider, $httpProvider, $urlRouterProvider, $stateProvider) {
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp|http):/);
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(whatsapp|https|http):/);
         $httpProvider.interceptors.push('InterceptorFactory');
         $urlRouterProvider.otherwise('/');
 

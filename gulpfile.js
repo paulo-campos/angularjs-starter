@@ -34,7 +34,7 @@ gulp.task('default', () => {
 });
 
 gulp.task('compile:dev',                      (done) => sequence('cache', 'doc', 'scss', done));
-gulp.task('compile:dist', [ 'compile:dev'  ], (done) => sequence('clear', 'copy', 'htmlmin-partials', 'htmlmin-index', 'deploy-dist', done));
+gulp.task('compile:dist', [ 'compile:dev'  ], (done) => sequence('clear', 'copy', 'html-partials', 'html-index', 'deploy-dist', done));
 gulp.task('compile:prod', [ 'compile:dist' ], (done) => sequence('deploy-prod', done));
 gulp.task('serve:dev',    [ 'compile:dev'  ], (done) => {
     sync.dev.init({
@@ -45,9 +45,9 @@ gulp.task('serve:dev',    [ 'compile:dev'  ], (done) => {
         port   : 3000
     }, done);
 
-    gulp.watch(paths.html_files, [ 'cache' ]);
-    gulp.watch('dev/app/**/*.js',   [ 'doc'   ]);
-    gulp.watch('dev/app/**/*.{css,map}', [ 'scss'  ]);
+    gulp.watch('dev/app/**/*.html',  [ 'cache' ]);
+    gulp.watch('dev/app/**/*.js',    [ 'doc'   ]);
+    gulp.watch('dev/scss/**/*.scss', [ 'scss'  ]);
     gulp.watch([
         './dev/index.html',
         'dev/assets/**/*',
@@ -123,7 +123,7 @@ gulp.task('copy', () => {
         .pipe(gulp.dest('dist/assets/'))
 });
 
-gulp.task('htmlmin-partials', () => {
+gulp.task('html-partials', () => {
     return gulp.src('dev/app/**/*.html')
         .pipe(useref())
         .pipe(gulpif('*.html', htmlmin({
@@ -133,7 +133,7 @@ gulp.task('htmlmin-partials', () => {
         .pipe(gulp.dest('dist/app/'))
 });
 
-gulp.task('htmlmin-index', () => {
+gulp.task('html-index', () => {
     return gulp.src('./dev/index.html')
         .pipe(useref())
         .pipe(gulpif('*.css',  cssnano()))

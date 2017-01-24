@@ -5,15 +5,13 @@
         .module('angularjs-starter')
         .directive('repeaterEnd', RepeaterEnd);
 
-    RepeaterEnd.$inject = [ '$timeout' ];
-
     /**
      * @namespace RepeaterEnd
      * @desc      Gets event when the last child of repeater renders
      * @example   <div ng-repeat="item in list" repeater-end="doSomething"></div>
      * @memberOf  App.Directives
      */
-    function RepeaterEnd ($timeout) {
+    function RepeaterEnd () {
         var directive = {
             restrict : 'A',
             link     : Link

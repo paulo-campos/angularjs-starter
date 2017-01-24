@@ -6,8 +6,8 @@
         .run(AppRun);
 
     AppRun.$inject = [
+        '$rootScope',
         '$window',
-        'DataFactory',
         'ScreensConstant'
     ];
 
@@ -16,7 +16,10 @@
      * @desc      Main control for device of the application
      * @memberOf  App
      */
-    function AppRun ($window, DataFactory, ScreensConstant) {
+    function AppRun ($rootScope, $window, ScreensConstant) {
+        $rootScope.safe = {};
+        ////////////////////
+
         definingDevice();
 
         /**
@@ -25,14 +28,14 @@
          */
         function definingDevice () {
             if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-                DataFactory.request.device = { desktop : true };
+                $rootScope.safe.device = { desktop : true };
             else if (
                 ($window.innerWidth  > ScreensConstant.WIDTH.MAX.SMARTPHONE) ||
                 ($window.innerHeight > ScreensConstant.WIDTH.MAX.SMARTPHONE)) {
-                DataFactory.request.device = { tablet : true };
+                $rootScope.safe.device = { tablet : true };
             }
             else
-                DataFactory.request.device = { smartphone : true };
+                $rootScope.safe.device = { smartphone : true };
         }
     }
 })();

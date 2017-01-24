@@ -1,4 +1,6 @@
-// Font
+/**
+  * @name FOnts
+  */
 @mixin font-source($font-family: false, $size: false, $colour: false, $weight: false,  $line-height: false) {
     @if $font-family { font-family: $font-family; }
     @if $size        { font-size:   $size;        }
@@ -7,7 +9,9 @@
     @if $line-height { line-height: $line-height; }
 }
 
-// Scaffolding
+/**
+  * @name Scaffolding
+  */
 @mixin size($width, $height) {
     width: $width;
     height: $height;
@@ -17,6 +21,13 @@
         left: auto;
         right: auto;
     }
+}
+@mixin absolute-screen ($width: 100%, $height: 100%, $position: absolute, $top: 0, $left: 0) {
+    width: $width;
+    height: $height;
+    position: $position;
+    top: $top;
+    left: $left;
 }
 @mixin responsive-ratio($x, $y) {
 	padding-top: unquote(($y / $x) * 100 + '%');
@@ -29,7 +40,9 @@
     }
 }
 
-// Pseudo
+/**
+  * @name Pseudo
+  */
 @mixin pseudo($display: block, $position: absolute, $content: ''){
     content: $content;
     display: $display;
@@ -76,7 +89,9 @@
     }
 }
 
-//Effects
+/**
+  * @name Effects
+  */
 @mixin hidden {
 	display: none;
 	visibility: hidden;

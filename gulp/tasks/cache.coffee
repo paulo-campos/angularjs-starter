@@ -5,6 +5,6 @@ paths = require('./../settings/paths').paths
 #====================
 
 gulp.task 'cache', ->
-    gulp.src paths.html_files
+    gulp.src paths.partials_files
         .pipe cache()
         .pipe gulp.dest paths.dev_folder

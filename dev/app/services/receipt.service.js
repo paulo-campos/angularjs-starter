@@ -6,8 +6,8 @@
         .service('ReceiptService', ReceiptService);
 
     ReceiptService.$inject = [
-        '$http',
-        '$log'
+        '$rootScope',
+        '$http'
     ];
 
     /**
@@ -15,25 +15,23 @@
      * @desc      Request data APIs for the application
      * @memberOf  App.Services
      */
-    function ReceiptService ($http, $log) {
-        var service = {
-            request: function (service) {
-                return sendRequest(service);
-            }
-        };
+    function ReceiptService ($rootScope, $http) {
+        var service = { request : sendRequest };
 
         return service;
         ////////////////////
 
         /**
          * @desc     Requests data from API
-         * @param    {String} service API from use for request
+         * @param    {String} api API from use for request
+         * @param    {Object} params Params from use for request
          * @memberOf App.Services.Receipt
          */
-        function sendRequest (service) {
+        function sendRequest (api, params) {
             var request = {
                 method : 'GET',
-                url    : service
+                url    : service,
+                params : (params ? params : {})
             };
 
             return $http(request)
@@ -43,29 +41,22 @@
         /**
          * @desc     Executes if there was success in the data request
          * @param    {Object} response Data of response
-         * @param    {Object} status Data of status
-         * @param    {Object} headers Data of headers
-         * @param    {Object} config Data of config
          * @returns  {Object} response Data of response
          * @memberOf App.Services.Receipt
          */
-        function responseSuccess (response, status, headers, config) {
-            return response;
+        function responseSuccess (response) {
+            if (response.status !== 200)
+                return responseFailed();
+
+            return response.data;
         }
 
         /**
          * @desc     Executes if not there was success in the data request
-         * @param    {Object} response Data of response
-         * @param    {Object} status Data of status
-         * @param    {Object} headers Data of headers
-         * @param    {Object} config Data of config
          * @memberOf App.Services.Receipt
          */
-        function responseFailed (response, status, headers, config) {
-            $log.error('Response: ' + response);
-            $log.error('Status:   ' + status);
-            $log.error('Headers:  ' + headers);
-            $log.error('Config:   ' + config);
+        function responseFailed () {
+            $rootScope.$broadcast('response.failed');
         }
     }
 })();

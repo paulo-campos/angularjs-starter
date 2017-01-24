@@ -13,11 +13,9 @@
      */
     function ImageLoad () {
         var directive = {
-            restrict: 'A',
-            scope: {
-                onLoad: '=imageLoad'
-            },
-            link: Link
+            restrict : 'A',
+            scope    : { onLoad: '=imageLoad' },
+            link     : Link
         };
 
         return directive;

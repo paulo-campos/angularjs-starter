@@ -6,8 +6,8 @@
         .service('SendService', SendService);
 
     SendService.$inject = [
-        '$http',
-        '$log'
+        '$rootScope',
+        '$http'
     ];
 
     /**
@@ -15,12 +15,8 @@
      * @desc      Application data delivery to APIs
      * @memberOf  App.Services
      */
-    function SendService ($http, $log) {
-        var service = {
-            request: function (service, data) {
-                return sendRequest(service, data);
-            }
-        };
+    function SendService ($rootScope, $http) {
+        var service = { request : sendRequest };
 
         return service;
         ////////////////////
@@ -36,9 +32,7 @@
                 method  : 'POST',
                 url     : service,
                 data    : data,
-                headers : {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8;'
-                }
+                headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8;' }
             };
 
             return $http(request)
@@ -48,29 +42,22 @@
         /**
          * @desc     Executes if there was success in the data send
          * @param    {Object} response Data of response
-         * @param    {Object} status Data of status
-         * @param    {Object} headers Data of headers
-         * @param    {Object} config Data of config
          * @returns  {Object} response Data of response
          * @memberOf App.Services.Send
          */
-        function responseSuccess (response, status, headers, config) {
-            return response;
+        function responseSuccess (response) {
+            if (response.status !== 200)
+                return responseFailed();
+
+            return response.data;
         }
 
         /**
          * @desc     Executes if not there was success in the data send
-         * @param    {Object} response Data of response
-         * @param    {Object} status Data of status
-         * @param    {Object} headers Data of headers
-         * @param    {Object} config Data of config
          * @memberOf App.Services.Send
          */
-        function responseFailed (response, status, headers, config) {
-            $log.error('Response: ' + response);
-            $log.error('Status:   ' + status);
-            $log.error('Headers:  ' + headers);
-            $log.error('Config:   ' + config);
-        }
+         function responseFailed () {
+             $rootScope.$broadcast('response.failed');
+         }
     }
 })();

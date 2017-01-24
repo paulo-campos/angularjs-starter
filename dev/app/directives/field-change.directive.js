@@ -13,11 +13,9 @@
      */
     function FieldChange () {
         var directive = {
-            restrict: 'A',
-            scope: {
-                onChange: '=fieldChange'
-            },
-            link: Link
+            restrict : 'A',
+            scope    : { onChange: '=fieldChange' },
+            link     : Link
         };
 
         return directive;

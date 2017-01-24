@@ -11,20 +11,20 @@ directory './'
 registers =
     configStart : (done) -> sequence 'start', done
 
-    compileDev  : (done) -> sequence 'cache', 'jshint', 'doc', 'scss', done
-    compileDist : (done) -> sequence 'copy', 'imagesmin', 'htmlmin-partials', 'htmlmin-index', 'deploy-dist', done
+    compileDev  : (done) -> sequence 'cache', 'doc', 'scss', done
+    compileDist : (done) -> sequence 'clear', 'copy', 'htmlmin-partials', 'htmlmin-index', 'deploy-dist', done
     compileProd : (done) -> sequence 'deploy-prod', done
 
     serveDev : (done) ->
         sync.dev.init paths.server.dev, done
 
         gulp.watch paths.html_files, [ 'cache' ]
-        gulp.watch paths.js_files,   [ 'jshint', 'doc' ]
+        gulp.watch paths.js_files,   [ 'doc' ]
         gulp.watch paths.scss_files, [ 'scss' ]
         gulp.watch [
             paths.dev_folder + paths.index_file,
-            paths.app_files,
             paths.assets_files,
+            paths.app_files,
             '!' + paths.css_files
         ]
         .on 'change', sync.dev.reload

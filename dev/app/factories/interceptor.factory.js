@@ -14,18 +14,10 @@
      */
     function InterceptorFactory ($rootScope) {
         var factory = {
-            request: function (success) {
-                return requestSuccess(success);
-            },
-            response: function (success) {
-                return responseSuccess(success);
-            },
-            requestError:  function (error) {
-                return requestError(error);
-            },
-            responseError: function (error) {
-                return responseError(error);
-            }
+            request       : requestSuccess,
+            response      : responseSuccess,
+            requestError  : requestError,
+            responseError : responseError
         };
 
         return factory;

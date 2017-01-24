@@ -9,14 +9,13 @@ paths = require('./../settings/paths').paths
 #====================
 
 gulp.task 'htmlmin-partials', ->
-    gulp.src paths.html_files
+    gulp.src paths.partials_files
         .pipe useref()
         .pipe gulpif '*.html', htmlmin(
             removeComments     : true
             collapseWhitespace : true
         )
-        .pipe gulp.dest paths.app_folder
-
+        .pipe gulp.dest paths.partials_folder
 
 gulp.task 'htmlmin-index', ->
     gulp.src paths.dev_folder + paths.index_file

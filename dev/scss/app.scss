@@ -1,8 +1,12 @@
-// Compass
+/**
+  * @name Compass
+  */
 @import
 "compass/css3";
 
-// Modules
+/**
+  * @name Modules
+  */
 @import
 "app/modules/reset",
 "app/modules/variables",
@@ -11,7 +15,9 @@
 "app/modules/mixins",
 "app/modules/angular";
 
-// Partials
+/**
+  * @name Partials
+  */
 @import
 "app/partials/base/base.core",
 "app/partials/base/base.responsive";

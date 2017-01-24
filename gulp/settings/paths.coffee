@@ -2,37 +2,35 @@ project = require('./project').project
 #====================
 
 paths =
-    root_folder   : './'
-    readme_file   : 'README.md'
-    package_file  : 'package.json'
-    bower_file    : 'bower.json'
-    index_file    : 'index.html'
-    dev_folder    : 'dev/'
-    dist_folder   : 'dist/'
-    htaccess_file : 'dev/.htaccess'
-    app_files     : 'dev/app/**/*.{js,html}'
-    js_files      : 'dev/app/**/*.js'
-    js_folder     : 'dev/app/'
-    html_files    : 'dev/app/**/*.html'
-    scss_folder   : 'dev/scss/'
-    scss_files    : 'dev/scss/**/*.scss'
-    assets_files  : 'dev/assets/**/*'
-    images_local  : 'dev/assets/images/app'
-    images_files  : 'dev/assets/images/**/*.{gif,jpg,png,svg}'
-    css_folder    : 'dev/assets/stylesheets/'
-    css_files     : 'dev/assets/stylesheets/**/*.{css,map}'
-    fonts_local   : 'dev/assets/fonts'
-    app_folder    : 'dist/app/'
-    assets_folder : 'dist/assets/'
-    images_folder : 'dist/assets/images/'
-    doc_folder    : 'doc/'
-    doc_files     : 'doc/**/*'
-    server        :
+    root_folder     : './'
+    readme_file     : 'README.md'
+    package_file    : 'package.json'
+    index_file      : 'index.html'
+    dev_folder      : 'dev/'
+    dist_folder     : 'dist/'
+    htaccess_file   : 'dev/.htaccess'
+    app_folder      : 'dev/app/'
+    app_files       : 'dev/app/**/*.{js,css,html}'
+    js_files        : 'dev/app/**/*.js'
+    css_files       : 'dev/app/**/*.{css,map}'
+    partials_files  : 'dev/app/**/*.html'
+    scss_folder     : 'dev/scss/'
+    scss_files      : 'dev/scss/**/*.scss'
+    assets_files    : 'dev/assets/**/*'
+    images_local    : 'dev/assets/images/app'
+    images_files    : 'dev/assets/images/**/*.{gif,jpg,png,svg}'
+    fonts_local     : 'dev/assets/fonts'
+    partials_folder : 'dist/app/'
+    assets_folder   : 'dist/assets/'
+    images_folder   : 'dist/assets/images/'
+    doc_folder      : 'doc/'
+    doc_files       : 'doc/**/*'
+    server          :
         dev  :
-            server :
+            server  :
                 baseDir : 'dev/'
                 routes  :
-                    '/bower_components' : 'bower_components'
+                    '/node_modules' : 'node_modules'
             port   : 3000
         doc  :
             server : 'doc/'

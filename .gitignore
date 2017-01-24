@@ -1,13 +1,13 @@
 # Ignored folders
 /.sass-cache/
-/bower_components/
-/dev/assets/stylesheets/
 /dist/
 /doc/
 /node_modules/
 
 # Ignored files
 /dev/templates.js
+/dev/app/**/*.css
+/dev/app/**/*.map
 
 # Ignored extensions
 *.DS_Store

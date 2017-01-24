@@ -19,11 +19,5 @@
         ////////////////
 
         base.title = 'AngularJS Starter';
-
-        // $scope.$on('request.success',  function () { requestRunning(true);  });
-        // $scope.$on('response.success', function () { requestRunning(false); });
-        ////////////////
-
-        // function requestRunning (status) {}
     }
 })();

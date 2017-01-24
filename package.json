@@ -4,8 +4,13 @@
   "description": "This project aims to streamline starting an application in AngularJS",
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp",
-    "postinstall": "gulp"
+    "postinstall": "gulp",
+    "compile:dev": "gulp compile:dev",
+    "compile:dist": "gulp compile:dist",
+    "serve:dev": "gulp serve:dev",
+    "serve:doc": "gulp serve:doc",
+    "serve:dist": "gulp serve:dist",
+    "compile:prod": "gulp compile:prod"
   },
   "repository": {
     "type": "git",
@@ -21,7 +26,6 @@
   "homepage": "https://github.com/paulovitorwd/angularjs-starter#readme",
   "devDependencies": {
     "browser-sync": "^2.14.0",
-    "coffee-script": "^1.10.0",
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^2.0.0",
     "gulp-compass": "^2.1.0",
@@ -33,8 +37,6 @@
     "gulp-rimraf": "^0.2.1",
     "gulp-uglify": "^1.5.4",
     "gulp-useref": "^3.1.0",
-    "jshint": "^2.9.2",
-    "require-dir": "^0.3.0",
     "run-sequence": "^1.2.2"
   },
   "dependencies": {

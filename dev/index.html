@@ -61,7 +61,8 @@
 
         <!-- build:css app/app.bundle.css -->
         <!--==== Stylesheets ====-->
-        <link rel="stylesheet" href="app/app.css">
+        <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
+        <link rel="stylesheet" href="app/app.style.css">
         <!--==== Stylesheets ====-->
         <!-- endbuild -->
 
@@ -102,7 +103,6 @@
         <script src="../node_modules/angular-animate/angular-animate.min.js"></script>
         <script src="../node_modules/angular-touch/angular-touch.min.js"></script>
         <script src="../node_modules/angular-off-click/dist/angular-off-click.min.js"></script>
-        <script src="../node_modules/angular-socialshare/dist/angular-socialshare.min.js"></script>
         <script src="../node_modules/angulartics/dist/angulartics.min.js"></script>
         <script src="../node_modules/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
         <!--==== Libs ====-->
@@ -112,12 +112,9 @@
         <script src="app/app.config.js"></script>
         <script src="app/app.routes.js"></script>
         <script src="app/app.run.js"></script>
-        <script src="app/constants/storages.constant.js"></script>
         <script src="app/constants/screens.constant.js"></script>
-        <script src="app/factories/interceptor.factory.js"></script>
-        <script src="app/services/receipt.service.js"></script>
+        <script src="app/services/feed.service.js"></script>
         <script src="app/services/send.service.js"></script>
-        <script src="app/directives/field-change.directive.js"></script>
         <script src="app/directives/image-load.directive.js"></script>
         <script src="app/directives/repeater-end.directive.js"></script>
         <script src="app/controllers/base/base.controller.js"></script>

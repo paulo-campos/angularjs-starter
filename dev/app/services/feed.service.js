@@ -3,9 +3,9 @@
 
     angular
         .module('angularjs-starter')
-        .service('ReceiptService', ReceiptService);
+        .service('FeedService', FeedService);
 
-    ReceiptService.$inject = [
+    FeedService.$inject = [
         '$rootScope',
         '$http'
     ];
@@ -15,7 +15,7 @@
      * @desc      Request data APIs for the application
      * @memberOf  App.Services
      */
-    function ReceiptService ($rootScope, $http) {
+    function FeedService ($rootScope, $http) {
         var service = { request : sendRequest };
 
         return service;

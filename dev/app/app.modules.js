@@ -14,7 +14,6 @@
             'ngAnimate',
             'ngTouch',
             'offClick',
-            '720kb.socialshare',
             'angulartics',
             'angulartics.google.analytics'
         ]);

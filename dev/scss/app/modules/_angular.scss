@@ -1,6 +1,0 @@
-.ng-animate,
-entrance {
-    @include perspective(1000);
-    @include transform(translateZ(0));
-    @include backface-visibility(hidden);
-}

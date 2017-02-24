@@ -28,14 +28,14 @@
          */
         function definingDevice () {
             if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-                $rootScope.safe.device = { desktop : true };
+                $rootScope.safe.device = 'desktop';
             else if (
                 ($window.innerWidth  > ScreensConstant.WIDTH.MAX.SMARTPHONE) ||
                 ($window.innerHeight > ScreensConstant.WIDTH.MAX.SMARTPHONE)) {
-                $rootScope.safe.device = { tablet : true };
+                $rootScope.safe.device = 'tablet';
             }
             else
-                $rootScope.safe.device = { smartphone : true };
+                $rootScope.safe.device = 'smartphone';
         }
     }
 })();

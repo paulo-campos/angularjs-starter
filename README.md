@@ -2,7 +2,7 @@
 
 > A better way to start developing web applications
 
-[![Build Status](https://travis-ci.org/paulovitorwd/angularjs-starter.svg?branch=master)](https://travis-ci.org/paulovitorwd/angularjs-starter) [![devDependency Status](https://david-dm.org/paulovitorwd/angularjs-starter/dev-status.svg)](https://david-dm.org/paulovitorwd/angularjs-starter#info=devDependencies)
+[![Build Status](https://travis-ci.org/paulo-campos/angularjs-starter.svg?branch=master)](https://travis-ci.org/paulo-campos/angularjs-starter) [![devDependencies Status](https://david-dm.org/paulo-campos/angularjs-starter/dev-status.svg)](https://david-dm.org/paulo-campos/angularjs-starter?type=dev)
 
 This project aims to streamline starting an application in AngularJS
 
@@ -11,7 +11,6 @@ This project aims to streamline starting an application in AngularJS
 ###### Added modules
 - [angular-ui-router](http://ngcordova.com/)
 - [angular-off-click](http://ngmodules.org/modules/angular-off-click)
-- [angular-socialshare](https://github.com/720kb/angular-socialshare)
 - [angulartics-google-analytics](https://github.com/angulartics/angulartics-google-analytics)
 
 ###### Added for development
@@ -49,6 +48,7 @@ This will:
     ├── .travis.yml        - Definitions for environment  
     ├── .editorconfig      - Definitions for general syntax code  
     ├── node_modules/      - Development packages  
+    ├── gulp/              - Tasks configuration
     ├── dev/               - Application for development  
     │   ├── .htaccess      - Definitions for server entry point  
     |   ├── index.html     - Main application entry point  
@@ -58,20 +58,20 @@ This will:
     │   ├── assets/        - Accessories files  
     ├── .sass-cache/       - Cached by Compass  
     ├── doc/               - Javascript documentation  
-    ├── dist/              - Application for distribuition
+    ├── build/             - Application for distribuition
 
 ### Workflow
 
 You can use any of the following commands:
 
-| Commands               | Result                                             |
-| ---------------------- |:--------------------------------------------------:|
-|`$ gulp compile:dev`    | Compilation of the files for development           |
-|`$ gulp compile:dist`   | Compilation of the files for distribuition         |
-|`$ gulp compile:prod`   | Compilation of the files for production            |
-|`$ gulp serve:dev`      | Watch the development in browser with livereload   |
-|`$ gulp serve:doc`      | Watch the documentation in browser with livereload |
-|`$ gulp serve:dist`     | Shows the distribuition in browser                 |
+| Commands             | Result                                             |
+| -------------------- |:--------------------------------------------------:|
+|`$ gulp compile:dev`  | Compilation of the files for development           |
+|`$ gulp compile:build`| Compilation of the files for distribuition         |
+|`$ gulp compile:prod` | Compilation of the files for production            |
+|`$ gulp serve:dev`    | Watch the development in browser with livereload   |
+|`$ gulp serve:doc`    | Watch the documentation in browser with livereload |
+|`$ gulp serve:build`  | Shows the distribuition in browser                 |
 
 ### License
 

@@ -6,24 +6,24 @@
   "scripts": {
     "postinstall": "gulp",
     "compile:dev": "gulp compile:dev",
-    "compile:dist": "gulp compile:dist",
+    "compile:build": "gulp compile:build",
     "serve:dev": "gulp serve:dev",
     "serve:doc": "gulp serve:doc",
-    "serve:dist": "gulp serve:dist",
+    "serve:build": "gulp serve:build",
     "compile:prod": "gulp compile:prod"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paulovitorwd/angularjs-starter.git"
+    "url": "git+https://github.com/paulo-campos/angularjs-starter.git"
   },
   "author": {
     "name": "Paulo Campos",
-    "email": "paulovitorwd@gmail.com"
+    "email": "paulo-campos@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/paulovitorwd/angularjs-starter/issues"
+    "url": "https://github.com/paulo-campos/angularjs-starter/issues"
   },
-  "homepage": "https://github.com/paulovitorwd/angularjs-starter#readme",
+  "homepage": "https://github.com/paulo-campos/angularjs-starter#readme",
   "devDependencies": {
     "browser-sync": "^2.18.6",
     "gulp": "^3.9.1",

@@ -15,7 +15,7 @@ const registers = require('./gulp/registers')(plugins, sync);
 plugins.gulp.task('default', () => {
     console.log('=================================');
     console.log('|                                |');
-    console.log('|    Use commands:               |');
+    console.log('|    Use the commands:           |');
     console.log('|      $ gulp compile:dev        |');
     console.log('|      $ gulp compile:build      |');
     console.log('|      $ gulp compile:prod       |');

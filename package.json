@@ -6,10 +6,10 @@
   "scripts": {
     "postinstall": "gulp",
     "compile:dev": "gulp compile:dev",
-    "compile:dist": "gulp compile:dist",
+    "compile:build": "gulp compile:build",
     "serve:dev": "gulp serve:dev",
     "serve:doc": "gulp serve:doc",
-    "serve:dist": "gulp serve:dist",
+    "serve:build": "gulp serve:build",
     "compile:prod": "gulp compile:prod"
   },
   "repository": {

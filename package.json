@@ -4,7 +4,6 @@
   "description": "This project aims to streamline starting an application in AngularJS",
   "main": "gulpfile.js",
   "scripts": {
-    "postinstall": "gulp",
     "compile:dev": "gulp compile:dev",
     "compile:build": "gulp compile:build",
     "serve:dev": "gulp serve:dev",
@@ -18,7 +17,7 @@
   },
   "author": {
     "name": "Paulo Campos",
-    "email": "paulo-campos@gmail.com"
+    "email": "paulovitorwd@gmail.com"
   },
   "bugs": {
     "url": "https://github.com/paulo-campos/angularjs-starter/issues"

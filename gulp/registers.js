@@ -21,7 +21,7 @@ module.exports = function (plugins, sync) {
             return plugins.runSequence('clear', 'copy', 'htmlmin', 'deploy:build', done);
         },
         compileProd : function (done) {
-            return plugins.runSequence('deploy:prod', done);
+            return plugins.runSequence('clear', 'copy', 'htmlmin', 'deploy:prod', done);
         },
         serveDev : function (done) {
             sync.dev.init({

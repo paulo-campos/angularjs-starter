@@ -28,7 +28,7 @@ plugins.gulp.task('default', () => {
 
 plugins.gulp.task('compile:dev',                        registers.compileDev);
 plugins.gulp.task('compile:build', [ 'compile:dev' ],   registers.compileBuild);
-plugins.gulp.task('compile:prod',  [ 'compile:build' ], registers.compileProd);
+plugins.gulp.task('compile:prod',  [ 'compile:dev' ],   registers.compileProd);
 plugins.gulp.task('serve:dev',     [ 'compile:dev' ],   registers.serveDev);
 plugins.gulp.task('serve:doc',     [ 'compile:dev' ],   registers.serveDoc);
 plugins.gulp.task('serve:build',   [ 'compile:build' ], registers.serveBuild);

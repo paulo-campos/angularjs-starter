@@ -11,6 +11,6 @@ module.exports = function (plugins) {
                 removeComments     : true,
                 collapseWhitespace : true
             })))
-            .pipe(plugins.gulp.dest('./build/'));
+            .pipe(plugins.gulp.dest('./dist/'));
     };
 };

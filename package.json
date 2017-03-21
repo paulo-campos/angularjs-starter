@@ -5,10 +5,10 @@
   "main": "gulpfile.js",
   "scripts": {
     "compile:dev": "gulp compile:dev",
-    "compile:build": "gulp compile:build",
+    "compile:dist": "gulp compile:dist",
     "serve:dev": "gulp serve:dev",
     "serve:doc": "gulp serve:doc",
-    "serve:build": "gulp serve:build",
+    "serve:dist": "gulp serve:dist",
     "compile:prod": "gulp compile:prod"
   },
   "repository": {

@@ -1,6 +1,6 @@
 # Ignored folders
 /.sass-cache/
-/build/
+/dist/
 /doc/
 /node_modules/
 

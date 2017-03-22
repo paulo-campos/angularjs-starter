@@ -1,5 +1,5 @@
-module.exports = function (plugins) {
-    return function () {
+module.exports = plugins => {
+    return () => {
         return plugins.gulp.src('./dev/**/*.html')
             .pipe(plugins.useref())
             .pipe(plugins.if('*.js',  plugins.uglify()))

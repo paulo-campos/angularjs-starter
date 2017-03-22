@@ -4,8 +4,8 @@ const plugins = require('gulp-load-plugins')({
 });
 
 const sync = {
-    dev   : plugins.browserSync.create(),
-    doc   : plugins.browserSync.create(),
+    dev  : plugins.browserSync.create(),
+    doc  : plugins.browserSync.create(),
     dist : plugins.browserSync.create()
 };
 

@@ -1,5 +1,5 @@
-module.exports = function (plugins, sync) {
-    return function () {
+module.exports = (plugins, sync) => {
+    return () => {
         plugins.gulp.src('./dev/app/**/*.{css,map}', { read : false })
             .pipe(plugins.rimraf({ force : true }));
 

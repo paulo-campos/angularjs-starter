@@ -64,14 +64,14 @@ This will:
 
 You can use any of the following commands:
 
-| Commands             | Result                                             |
-| -------------------- |:--------------------------------------------------:|
-|`$ gulp compile:dev`  | Compilation of the files for development           |
-|`$ gulp compile:dist` | Compilation of the files for distribuition         |
-|`$ gulp compile:prod` | Compilation of the files for production            |
-|`$ gulp serve:dev`    | Watch the development in browser with livereload   |
-|`$ gulp serve:doc`    | Watch the documentation in browser with livereload |
-|`$ gulp serve:dist`   | Shows the distribuition in browser                 |
+| Commands                 | Result                                             |
+|--------------------------|:--------------------------------------------------:|
+| `$ npm run compile:dev`  | Compilation of the files for development           |
+| `$ npm run compile:dist` | Compilation of the files for distribuition         |
+| `$ npm run compile:prod` | Compilation of the files for production            |
+| `$ npm run serve:dev`    | Watch the development in browser with livereload   |
+| `$ npm run serve:doc`    | Watch the documentation in browser with livereload |
+| `$ npm run serve:dist`   | Shows the distribuition in browser                 |
 
 ### License
 

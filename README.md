@@ -2,7 +2,7 @@
 
 > A better way to start developing web applications
 
-[![Build Status](https://travis-ci.org/paulo-campos/angularjs-starter.svg?branch=master)](https://travis-ci.org/paulo-campos/angularjs-starter) [![devDependencies Status](https://david-dm.org/paulo-campos/angularjs-starter/dev-status.svg)](https://david-dm.org/paulo-campos/angularjs-starter?type=dev)
+[![Build Status](https://travis-ci.org/paulo-campos/angularjs-starter.svg?branch=master)](https://travis-ci.org/paulo-campos/angularjs-starter) [![devDependencies Status](https://david-dm.org/paulo-campos/angularjs-starter/dev-status.svg)](https://david-dm.org/paulo-campos/angularjs-starter?type=dev) [![dependencies Status](https://david-dm.org/paulo-campos/angularjs-starter/status.svg)](https://david-dm.org/paulo-campos/angularjs-starter)
 
 This project aims to streamline starting an application in AngularJS
 
@@ -35,30 +35,26 @@ For the install all dependencies, run the command:
 
     npm install
 
-This will:  
-- Install the NPM packages
-
 ### Structure
 
     ├── README.md          - Documentation of project  
     ├── package.json       - Environment dependencies management by NPM  
-    ├── gulpfile.js        - Initiation of tasks  
+    ├── gulpfile.js        - Main file for build tasks  
     ├── .gitignore         - Tracker skipped files  
     ├── .travis.yml        - Definitions for environment  
-    ├── .editorconfig      - Definitions for general syntax code  
-    ├── node_modules/      - Development packages  
-    ├── gulp/              - Tasks configuration
-    ├── dev/               - Application for development  
+    ├── .editorconfig      - Definitions for syntax code  
+    ├── node_modules/      - Dependencies packages for development  
+    ├── gulp/              - Build tasks configuration  
+    ├── dev/               - Development application  
     │   ├── .htaccess      - Definitions for server entry point  
     |   ├── index.html     - Main application entry point  
     |   ├── templates.js   - Cache for views  
-    │   ├── app/           - Custom AngularJS  
-    │   ├── scss/          - SCSS modularized  
-    │   ├── assets/        - Accessories files  
     │   ├── recourses/     - Resources files  
+    │   ├── assets/        - Accessories files  
+    │   ├── app/           - Custom AngularJS and stylesheets  
     ├── .sass-cache/       - Cached by Compass  
     ├── doc/               - Javascript documentation  
-    ├── dist/              - Application for distribuition
+    ├── dist/              - Distribution application
 
 ### Workflow
 
@@ -68,10 +64,10 @@ You can use any of the following commands:
 |--------------------------|:--------------------------------------------------:|
 | `$ npm run compile:dev`  | Compilation of the files for development           |
 | `$ npm run compile:dist` | Compilation of the files for distribuition         |
-| `$ npm run compile:prod` | Compilation of the files for production            |
 | `$ npm run serve:dev`    | Watch the development in browser with livereload   |
 | `$ npm run serve:doc`    | Watch the documentation in browser with livereload |
 | `$ npm run serve:dist`   | Shows the distribuition in browser                 |
+| `$ npm run compile:prod` | Compilation of the files for production            |
 
 ### License
 

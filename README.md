@@ -37,7 +37,6 @@ For the install all dependencies, run the command:
 
 This will:  
 - Install the NPM packages
-- Show the Gulp tasks
 
 ### Structure
 
@@ -59,7 +58,7 @@ This will:
     │   ├── recourses/     - Resources files  
     ├── .sass-cache/       - Cached by Compass  
     ├── doc/               - Javascript documentation  
-    ├── build/             - Application for distribuition
+    ├── dist/              - Application for distribuition
 
 ### Workflow
 
@@ -68,11 +67,11 @@ You can use any of the following commands:
 | Commands             | Result                                             |
 | -------------------- |:--------------------------------------------------:|
 |`$ gulp compile:dev`  | Compilation of the files for development           |
-|`$ gulp compile:build`| Compilation of the files for distribuition         |
+|`$ gulp compile:dist` | Compilation of the files for distribuition         |
 |`$ gulp compile:prod` | Compilation of the files for production            |
 |`$ gulp serve:dev`    | Watch the development in browser with livereload   |
 |`$ gulp serve:doc`    | Watch the documentation in browser with livereload |
-|`$ gulp serve:build`  | Shows the distribuition in browser                 |
+|`$ gulp serve:dist`   | Shows the distribuition in browser                 |
 
 ### License
 

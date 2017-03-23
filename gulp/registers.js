@@ -4,17 +4,17 @@ module.exports = (plugins, sync) => {
     plugins.gulp.task('cache',        getTask('cache'));
     plugins.gulp.task('doc',          getTask('doc'));
     plugins.gulp.task('compass',      getTask('compass'));
-    plugins.gulp.task('clear',        getTask('clear'));
+    plugins.gulp.task('clean',        getTask('clean'));
     plugins.gulp.task('copy',         getTask('copy'));
-    plugins.gulp.task('htmlmin',      getTask('htmlmin'));
+    plugins.gulp.task('useref',       getTask('useref'));
     plugins.gulp.task('deploy:dist',  getTask('deploy-dist'));
     plugins.gulp.task('deploy:prod',  getTask('deploy-prod'));
     ////////////////////
 
     return {
         compileDev  : done => plugins.runSequence('cache', 'doc', 'compass', done),
-        compileDist : done => plugins.runSequence('clear', 'copy', 'htmlmin', 'deploy:dist', done),
-        compileProd : done => plugins.runSequence('clear', 'copy', 'htmlmin', 'deploy:prod', done),
+        compileDist : done => plugins.runSequence('clean', 'copy', 'useref', 'deploy:dist', done),
+        compileProd : done => plugins.runSequence('clean', 'copy', 'useref', 'deploy:prod', done),
         serveDev    : done => {
             sync.dev.init({
                 server : {

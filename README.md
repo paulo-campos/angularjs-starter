@@ -56,6 +56,7 @@ This will:
     │   ├── app/           - Custom AngularJS  
     │   ├── scss/          - SCSS modularized  
     │   ├── assets/        - Accessories files  
+    │   ├── recourses/     - Resources files  
     ├── .sass-cache/       - Cached by Compass  
     ├── doc/               - Javascript documentation  
     ├── build/             - Application for distribuition

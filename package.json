@@ -4,10 +4,10 @@
   "description": "This project aims to streamline starting an application in AngularJS",
   "main": "gulpfile.js",
   "scripts": {
+    "start": "gulp",
     "compile:dev": "gulp compile:dev",
     "compile:dist": "gulp compile:dist",
     "serve:dev": "gulp serve:dev",
-    "serve:doc": "gulp serve:doc",
     "serve:dist": "gulp serve:dist",
     "compile:prod": "gulp compile:prod"
   },
@@ -25,18 +25,19 @@
   "homepage": "https://github.com/paulo-campos/angularjs-starter#readme",
   "devDependencies": {
     "browser-sync": "^2.18.6",
+    "coffeescript": "^2.1.1",
     "gulp": "^3.9.1",
-    "gulp-angular-templatecache": "^2.0.0",
     "gulp-compass": "^2.1.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.2",
-    "gulp-jsdoc3": "^1.0.1",
     "gulp-load-plugins": "^1.5.0",
+    "gulp-ng-template": "^0.2.3",
     "gulp-replace": "^0.5.4",
+    "gulp-rev": "^8.1.1",
     "gulp-rimraf": "^0.2.1",
     "gulp-uglify": "^2.0.1",
-    "gulp-useref": "^3.1.2",
+    "gulp-usemin": "^0.3.28",
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
@@ -46,8 +47,7 @@
     "angular-touch": "^1.6.1",
     "angular-ui-router": "^0.4.2",
     "angulartics": "^1.3.0",
-    "angulartics-google-analytics": "^0.4.0",
-    "normalize.css": "^5.0.0"
+    "angulartics-google-analytics": "^0.4.0"
   },
   "engines": {
     "node": ">=6.9.4",

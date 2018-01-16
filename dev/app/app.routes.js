@@ -19,11 +19,11 @@
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-        .state('base', {
+        .state('root', {
             url          : '/',
-            templateUrl  : 'app/controllers/base/base.html',
-            controller   : 'BaseController',
-            controllerAs : 'base'
+            templateUrl  : './app/controllers/root/root.html',
+            controller   : 'RootController',
+            controllerAs : 'root'
         });
     }
 })();

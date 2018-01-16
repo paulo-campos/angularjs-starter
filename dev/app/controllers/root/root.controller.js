@@ -3,9 +3,9 @@
 
     angular
         .module('angularjs-starter')
-        .controller('BaseController', BaseController);
+        .controller('RootController', RootController);
 
-    BaseController.$inject = [
+    RootController.$inject = [
         '$scope'
     ];
 
@@ -14,7 +14,7 @@
      * @desc      Controls the scope of the base
      * @memberOf  App.Controllers
      */
-    function BaseController ($scope) {
+    function RootController ($scope) {
         var base = this;
         ////////////////
 

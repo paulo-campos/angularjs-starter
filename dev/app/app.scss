@@ -5,14 +5,14 @@
 "compass/css3";
 
 /**
-  * @name Modules
+  * @name Theme
   */
 @import
-"./modules/reset",
-"./modules/variables",
-"./modules/fonts",
-"./modules/queries",
-"./modules/mixins";
+"./theme/reset",
+"./theme/variables",
+"./theme/fonts",
+"./theme/queries",
+"./theme/mixins";
 
 /**
   * @name Controllers

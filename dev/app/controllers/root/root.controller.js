@@ -9,15 +9,10 @@
         '$scope'
     ];
 
-    /**
-     * @namespace Base
-     * @desc      Controls the scope of the base
-     * @memberOf  App.Controllers
-     */
     function RootController ($scope) {
-        var base = this;
+        var root = this;
         ////////////////
 
-        base.title = 'AngularJS Starter';
+        root.title = 'AngularJS Starter';
     }
 })();

@@ -5,6 +5,7 @@
 /node_modules/
 
 # Ignored files
+
 /dev/templates.js
 /dev/app/**/*.css
 /dev/app/**/*.map

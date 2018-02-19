@@ -57,41 +57,20 @@
         <ui-view></ui-view>
         <!--==== View ====-->
 
-        <!--==== Analytics ====-->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXX-X"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag (){
-                dataLayer.push(arguments);
-            }
-
-            gtag('js', new Date());
-            gtag('config', 'UA-XXXXXXXX-X');
-        </script>
-        <!--==== Analytics ====-->
-
         <!-- build:js app/app.bundle.js -->
         <!--==== Libs ====-->
         <script src="./../node_modules/angular/angular.min.js"></script>
         <script src="./../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <script src="./../node_modules/angular-animate/angular-animate.min.js"></script>
-        <script src="./../node_modules/angular-touch/angular-touch.min.js"></script>
-        <script src="./../node_modules/angular-off-click/dist/angular-off-click.min.js"></script>
-        <script src="./../node_modules/angulartics/dist/angulartics.min.js"></script>
-        <script src="./../node_modules/angulartics-google-analytics/dist/angulartics-ga.min.js"></script>
         <!--==== Libs ====-->
 
         <!--==== App ====-->
         <script src="./app/app.modules.js"></script>
-        <script src="./app/app.cache.js"></script>
-        <script src="./app/app.config.js"></script>
-        <script src="./app/app.routes.js"></script>
-        <script src="./app/app.run.js"></script>
+        <script src="./app/config/app.cache.js"></script>
+        <script src="./app/config/app.config.js"></script>
+        <script src="./app/config/app.routes.js"></script>
+        <script src="./app/config/app.run.js"></script>
         <script src="./app/services/feed.service.js"></script>
         <script src="./app/services/send.service.js"></script>
-        <script src="./app/directives/image-load.directive.js"></script>
-        <script src="./app/directives/repeater-end.directive.js"></script>
         <script src="./app/controllers/root/root.controller.js"></script>
         <!--==== App ====-->
         <!-- endbuild -->

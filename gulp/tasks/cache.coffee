@@ -1,11 +1,11 @@
 module.exports = (plugins) ->
     return () ->
-        plugins.gulp.src './dev/app/app.cache.js', read : false
+        plugins.gulp.src './dev/app/config/app.cache.js', read : false
             .pipe plugins.rimraf force : true
 
         return plugins.gulp.src './dev/app/**/*.html'
             .pipe plugins.ngTemplate
                 moduleName : 'angularjs-starter',
-                prefix     : './app/',
+                prefix     : './app/config/',
                 filePath   : 'app.cache.js'
-            .pipe plugins.gulp.dest './dev/app/'
+            .pipe plugins.gulp.dest './dev/app/config/'

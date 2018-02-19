@@ -1,12 +1,11 @@
 # Ignored folders
 /.sass-cache/
 /dist/
-/doc/
 /node_modules/
 
 # Ignored files
 /package-lock.json
-/dev/templates.js
+/dev/app/config/app.cache.js
 /dev/app/**/*.css
 /dev/app/**/*.map
 

@@ -5,7 +5,7 @@
 /node_modules/
 
 # Ignored files
-
+/package-lock.json
 /dev/templates.js
 /dev/app/**/*.css
 /dev/app/**/*.map

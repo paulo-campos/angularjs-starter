@@ -6,6 +6,6 @@ module.exports = (plugins) ->
         return plugins.gulp.src './dev/app/**/*.html'
             .pipe plugins.ngTemplate
                 moduleName : 'angularjs-starter',
-                prefix     : './app/config/',
+                prefix     : './app/',
                 filePath   : 'app.cache.js'
             .pipe plugins.gulp.dest './dev/app/config/'
